@@ -11,10 +11,17 @@ public class SampleController {
 
     /**
      * index 페이지
+     * (로그인한 사용자와 로그인하지 않은 사용자에 따라 첫페이지를 다르게 보이고 싶을 경우 principal 추가.)
+     * (인덱스 페이지는 permitAll()로 설정했기 때문에 principal이 없어도 접근 가능. NullPointerException이 발생하지 않음.)
      */
     @GetMapping("/")
-    public String index(Model model) {
-        model.addAttribute("message", "Hello Spring Security");
+    public String index(Model model, Principal principal) {
+        if(principal ==  null) {
+            model.addAttribute("message", "Hello Spring Security");
+        } else {
+            model.addAttribute("message", "Hello, " + principal.getName());
+        }
+
         return "index";
     }
 
@@ -29,7 +36,7 @@ public class SampleController {
 
     /**
      * 로그인한 사용자만 볼 수 있는 dashboard 페이지
-     * (로그인하여 principal이 있어야 접근 가능한 페이지)
+     * (로그인하여 principal이 있어야 접근 가능한 페이지, principal이 없으면 null이 들어와서 NullPointerException 발생.)
      */
     @GetMapping("/dashboard")
     public String dashboard(Model model, Principal principal) {
