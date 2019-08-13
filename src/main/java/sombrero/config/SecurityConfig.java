@@ -23,7 +23,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     /**
-     * Spring security에서 기본으로 만들어주는 user의 패스워드는
+     * Spring security에서 기본으로 만들어주는 인메모리 user의 패스워드는
      * SecurityProperties에서 생성한 것을 받아서 UserDetailsServiceAutoConfiguration가 출력해 줌.
      * application.properties에 설정하면 출력하지 않음.
      */
