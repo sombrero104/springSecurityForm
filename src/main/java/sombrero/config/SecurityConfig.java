@@ -1,19 +1,24 @@
 package sombrero.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import sombrero.account.AccountService;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+    /*@Autowired
+    AccountService accountService;*/
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .mvcMatchers("/", "/info").permitAll()
+                .mvcMatchers("/", "/info", "/account/**").permitAll()
                 .mvcMatchers("/admin").hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()
@@ -33,10 +38,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
      *          form에서 입력한 패스워드를 이 prefix의 암호화 방식으로 암호화하여 비교함.
      *          'noop'은 암호화를 하지 않았다는 뜻.
      */
-    @Override
+    /*@Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
                 .withUser("sombrero").password("{noop}123").roles("USER").and()
                 .withUser("admin").password("{noop}123").roles("ADMIN");
-    }
+    }*/
+
+    /**
+     * AuthenticationManagerBuilder에게 사용할 UserDetailsService를 알려줄 때
+     * 아래처럼 정의하지 않아도 UserDetailsService를 구현한 AccountService가 빈으로 등록되어 있으면 자동으로 사용하게 됨.
+     */
+    /*@Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(accountService);
+    }*/
 }
