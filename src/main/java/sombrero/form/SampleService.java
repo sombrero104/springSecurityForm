@@ -41,6 +41,9 @@ public class SampleService {
          * principal: 인증한 사용자를 나타내는 정보.
          *            UserDetailsService에서 리턴한 UserDetails 타입의 객체.
          *
+         *            * UserDetails: 애플리케이션이 가지고 있는 유저 정보와 시큐리티가 사용하는 Authentication 객체 사이의 어댑터.
+         *            * UserDetailsService: 유저 정보를 UserDetails 타입으로 가져오는 DAO(Data Access Object) 인터페이스.
+         *
          * 디버깅 결과:
          * org.springframework.security.core.userdetails.User@59957021:
          *  Username: sombrero; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true;
