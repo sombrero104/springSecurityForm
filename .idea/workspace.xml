@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="194f3d26-a6f3-4b88-8487-1b1b962c39a6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/sombrero/form/SampleService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sombrero/account/AccountControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sombrero/account/AccountControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/sombrero/account/AccountControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/sombrero/account/AccountControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sombrero/form/SampleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sombrero/form/SampleController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -19,37 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sombrero/account/AccountController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#500#501#0" expanded="true" />
-                <element signature="e#555#556#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/sombrero/account/AccountControllerTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sombrero/form/SampleService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="123" column="18" selection-start-line="123" selection-start-column="18" selection-end-line="123" selection-end-column="18" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/sombrero/account/WithUser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="96">
+              <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -84,7 +58,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/admin.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/dashboard.html" />
-        <option value="$PROJECT_DIR$/src/main/java/sombrero/form/SampleController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/sombrero/account/AccountRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/sombrero/config/SecurityConfig.java" />
@@ -95,6 +68,8 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/sombrero/account/WithUser.java" />
         <option value="$PROJECT_DIR$/src/test/java/sombrero/account/AccountControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/sombrero/form/SampleController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/sombrero/form/SampleService.java" />
       </list>
     </option>
   </component>
@@ -134,9 +109,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="662" />
+    <option name="x" value="288" />
     <option name="y" value="23" />
-    <option name="width" value="1137" />
+    <option name="width" value="1487" />
     <option name="height" value="967" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -282,7 +257,24 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AccountControllerTest">
+  <component name="RunManager" selected="Application.Application">
+    <configuration name="Application" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="sombrero.Application" />
+      <module name="springSecurityForm" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="sombrero.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AccountControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="springSecurityForm" />
       <extension name="coverage">
@@ -362,6 +354,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Application" />
+      <item itemvalue="JUnit.AccountControllerTest" />
+      <item itemvalue="JUnit.AccountControllerTest.index_anonymous_annotation" />
+      <item itemvalue="JUnit.AccountControllerTest.index_user_annotation" />
+      <item itemvalue="JUnit.AccountControllerTest.login" />
+      <item itemvalue="JUnit.AccountControllerTest.login_fail" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.AccountControllerTest" />
@@ -386,27 +386,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AccountControllerTest_admin_admin - 2019.08.14 at 19h 30m 50s.xml">
-      <configuration name="AccountControllerTest.admin_admin" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AccountControllerTest_index_anonymous_annotation - 2019.08.14 at 19h 32m 12s.xml">
-      <configuration name="AccountControllerTest.index_anonymous_annotation" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AccountControllerTest_index_anonymous_annotation - 2019.08.14 at 19h 36m 33s.xml">
-      <configuration name="AccountControllerTest.index_anonymous_annotation" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AccountControllerTest_index_user_annotation - 2019.08.14 at 19h 38m 27s.xml">
-      <configuration name="AccountControllerTest.index_user_annotation" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AccountControllerTest_login - 2019.08.14 at 21h 05m 59s.xml">
-      <configuration name="AccountControllerTest.login" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AccountControllerTest_login - 2019.08.14 at 21h 07m 49s.xml">
-      <configuration name="AccountControllerTest.login" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AccountControllerTest_login - 2019.08.14 at 21h 08m 58s.xml">
-      <configuration name="AccountControllerTest.login" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="AccountControllerTest_login - 2019.08.14 at 21h 09m 43s.xml">
       <configuration name="AccountControllerTest.login" configurationId="JUnit" />
     </history-entry>
@@ -416,20 +395,41 @@
     <history-entry file="AccountControllerTest_login_fail - 2019.08.14 at 21h 14m 02s.xml">
       <configuration name="AccountControllerTest.login_fail" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="AccountControllerTest - 2019.08.14 at 21h 18m 14s.xml">
+      <configuration name="AccountControllerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AccountControllerTest - 2019.08.14 at 21h 44m 07s.xml">
+      <configuration name="AccountControllerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AccountControllerTest - 2019.08.14 at 21h 44m 29s.xml">
+      <configuration name="AccountControllerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AccountControllerTest - 2019.08.14 at 21h 44m 52s.xml">
+      <configuration name="AccountControllerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AccountControllerTest - 2019.08.14 at 21h 46m 00s.xml">
+      <configuration name="AccountControllerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AccountControllerTest - 2019.08.14 at 21h 46m 10s.xml">
+      <configuration name="AccountControllerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AccountControllerTest - 2019.08.14 at 21h 46m 30s.xml">
+      <configuration name="AccountControllerTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="662" y="23" width="1137" height="967" extended-state="0" />
+    <frame x="288" y="23" width="1487" height="967" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1607306" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15570934" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32914287" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32914287" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -441,9 +441,21 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" visible="true" weight="0.09680365" />
+      <window_info anchor="right" id="Maven" order="4" visible="true" weight="0.073356405" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
     </layout>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/sombrero/form/SampleService.java</url>
+          <line>37</line>
+          <properties />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/info.html">
@@ -487,16 +499,6 @@
           <caret line="38" column="50" lean-forward="true" selection-start-line="38" selection-start-column="50" selection-end-line="38" selection-end-column="50" />
           <folding>
             <element signature="e#0#3177#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sombrero/form/SampleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="21" column="70" lean-forward="true" selection-start-line="21" selection-start-column="70" selection-end-line="21" selection-end-column="70" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -595,8 +597,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/sombrero/account/AccountControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="123" column="18" selection-start-line="123" selection-start-column="18" selection-end-line="123" selection-end-column="18" />
+        <state relative-caret-position="285">
+          <caret line="19" column="71" lean-forward="true" selection-start-line="19" selection-start-column="71" selection-end-line="19" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sombrero/form/SampleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="47" column="30" lean-forward="true" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sombrero/form/SampleService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
