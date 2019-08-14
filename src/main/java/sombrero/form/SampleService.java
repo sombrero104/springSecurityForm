@@ -43,6 +43,7 @@ public class SampleService {
          *
          *            * UserDetails: 애플리케이션이 가지고 있는 유저 정보와 시큐리티가 사용하는 Authentication 객체 사이의 어댑터.
          *            * UserDetailsService: 유저 정보를 UserDetails 타입으로 가져오는 DAO(Data Access Object) 인터페이스.
+         *                                  유저 정보를 스프링 시큐리티(Authentication Manager)에 제공하여 인증하도록 하는 역할.
          *
          * 디버깅 결과:
          * org.springframework.security.core.userdetails.User@59957021:
