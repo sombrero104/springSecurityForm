@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.test.context.support.WithAnonymousUser;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -47,12 +48,34 @@ public class AccountControllerTest {
     }
 
     /**
-     * (2) 인덱스 페이지에 USER 권한 사용자가 로그인한 경우.
+     * (2-1) 인덱스 페이지에 USER 권한 사용자가 로그인한 경우.
      * 임의로 만든 유저(실제 존재하지 않는 mock 유저)가 로그인한 상태에서 페이지 응답이 어떻게 나오는지 테스트.
      */
     @Test
     public void index_user() throws Exception {
         mockMvc.perform(get("/").with(user("sombrero").roles("USER")))
+                .andDo(print())
+                .andExpect(status().isOk());
+    }
+
+    /**
+     * (2-2) 인덱스 페이지에 USER 권한 사용자가 로그인한 경우 애노테이션 방법.
+     */
+    @Test
+    @WithMockUser(username = "sombrero", roles = "USER")
+    public void index_user_annotation() throws Exception {
+        mockMvc.perform(get("/"))
+                .andDo(print())
+                .andExpect(status().isOk());
+    }
+
+    /**
+     * (2-3) 인덱스 페이지에 USER 권한 사용자가 로그인한 경우 커스텀 애노테이션 방법.
+     */
+    @Test
+    @WithUser
+    public void index_user_custom_annotation() throws Exception {
+        mockMvc.perform(get("/"))
                 .andDo(print())
                 .andExpect(status().isOk());
     }

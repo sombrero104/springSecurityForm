@@ -34,8 +34,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/sombrero/account/AccountControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="70" column="46" selection-start-line="70" selection-start-column="46" selection-end-line="70" selection-end-column="46" />
+            <state relative-caret-position="331">
+              <caret line="84" column="9" lean-forward="true" selection-start-line="84" selection-start-column="9" selection-end-line="84" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -252,7 +252,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AccountControllerTest.index_anonymous_annotation">
+  <component name="RunManager" selected="JUnit.AccountControllerTest.index_user_annotation">
     <configuration name="AccountControllerTest.admin_admin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="springSecurityForm" />
       <extension name="coverage">
@@ -301,22 +301,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AccountControllerTest.index_anonymous" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="springSecurityForm" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sombrero.account.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="sombrero.account" />
-      <option name="MAIN_CLASS_NAME" value="sombrero.account.AccountControllerTest" />
-      <option name="METHOD_NAME" value="index_anonymous" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="AccountControllerTest.index_anonymous_annotation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="springSecurityForm" />
       <extension name="coverage">
@@ -333,13 +317,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AccountControllerTest.index_user_annotation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="springSecurityForm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sombrero.account.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sombrero.account" />
+      <option name="MAIN_CLASS_NAME" value="sombrero.account.AccountControllerTest" />
+      <option name="METHOD_NAME" value="index_user_annotation" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AccountControllerTest.index_user_annotation" />
         <item itemvalue="JUnit.AccountControllerTest.index_anonymous_annotation" />
         <item itemvalue="JUnit.AccountControllerTest.admin_admin" />
         <item itemvalue="JUnit.AccountControllerTest.admin_user" />
         <item itemvalue="JUnit.AccountControllerTest.index_admin" />
-        <item itemvalue="JUnit.AccountControllerTest.index_anonymous" />
       </list>
     </recent_temporary>
   </component>
@@ -371,6 +371,15 @@
     </history-entry>
     <history-entry file="AccountControllerTest_admin_admin - 2019.08.14 at 19h 30m 50s.xml">
       <configuration name="AccountControllerTest.admin_admin" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AccountControllerTest_index_anonymous_annotation - 2019.08.14 at 19h 32m 12s.xml">
+      <configuration name="AccountControllerTest.index_anonymous_annotation" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AccountControllerTest_index_anonymous_annotation - 2019.08.14 at 19h 36m 33s.xml">
+      <configuration name="AccountControllerTest.index_anonymous_annotation" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AccountControllerTest_index_user_annotation - 2019.08.14 at 19h 38m 27s.xml">
+      <configuration name="AccountControllerTest.index_user_annotation" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -532,10 +541,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-test/5.1.6.RELEASE/spring-security-test-5.1.6.RELEASE.jar!/org/springframework/security/test/context/support/WithMockUser.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/sombrero/account/AccountControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="70" column="46" selection-start-line="70" selection-start-column="46" selection-end-line="70" selection-end-column="46" />
+        <state relative-caret-position="331">
+          <caret line="84" column="9" lean-forward="true" selection-start-line="84" selection-start-column="9" selection-end-line="84" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
