@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="194f3d26-a6f3-4b88-8487-1b1b962c39a6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sombrero/account/AccountControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sombrero/account/AccountControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/sombrero/account/AccountControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/sombrero/account/AccountControllerTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -34,8 +36,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/sombrero/account/AccountControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="84" column="9" lean-forward="true" selection-start-line="84" selection-start-column="9" selection-end-line="84" selection-end-column="9" />
+            <state relative-caret-position="276">
+              <caret line="123" column="18" selection-start-line="123" selection-start-column="18" selection-end-line="123" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/sombrero/account/WithUser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -49,8 +63,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -79,6 +93,7 @@
         <option value="$PROJECT_DIR$/src/main/java/sombrero/Application.java" />
         <option value="$PROJECT_DIR$/src/main/java/sombrero/account/AccountController.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/sombrero/account/WithUser.java" />
         <option value="$PROJECT_DIR$/src/test/java/sombrero/account/AccountControllerTest.java" />
       </list>
     </option>
@@ -215,6 +230,21 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="springSecurityForm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springSecurityForm" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springSecurityForm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springSecurityForm" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="account" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -252,8 +282,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AccountControllerTest.index_user_annotation">
-    <configuration name="AccountControllerTest.admin_admin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.AccountControllerTest">
+    <configuration name="AccountControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="springSecurityForm" />
       <extension name="coverage">
         <pattern>
@@ -263,40 +293,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="sombrero.account" />
       <option name="MAIN_CLASS_NAME" value="sombrero.account.AccountControllerTest" />
-      <option name="METHOD_NAME" value="admin_admin" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AccountControllerTest.admin_user" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="springSecurityForm" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sombrero.account.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="sombrero.account" />
-      <option name="MAIN_CLASS_NAME" value="sombrero.account.AccountControllerTest" />
-      <option name="METHOD_NAME" value="admin_user" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AccountControllerTest.index_admin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="springSecurityForm" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sombrero.account.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="sombrero.account" />
-      <option name="MAIN_CLASS_NAME" value="sombrero.account.AccountControllerTest" />
-      <option name="METHOD_NAME" value="index_admin" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -333,13 +330,45 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AccountControllerTest.login" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="springSecurityForm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sombrero.account.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sombrero.account" />
+      <option name="MAIN_CLASS_NAME" value="sombrero.account.AccountControllerTest" />
+      <option name="METHOD_NAME" value="login" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AccountControllerTest.login_fail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="springSecurityForm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sombrero.account.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sombrero.account" />
+      <option name="MAIN_CLASS_NAME" value="sombrero.account.AccountControllerTest" />
+      <option name="METHOD_NAME" value="login_fail" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AccountControllerTest" />
+        <item itemvalue="JUnit.AccountControllerTest.login_fail" />
+        <item itemvalue="JUnit.AccountControllerTest.login" />
         <item itemvalue="JUnit.AccountControllerTest.index_user_annotation" />
         <item itemvalue="JUnit.AccountControllerTest.index_anonymous_annotation" />
-        <item itemvalue="JUnit.AccountControllerTest.admin_admin" />
-        <item itemvalue="JUnit.AccountControllerTest.admin_user" />
-        <item itemvalue="JUnit.AccountControllerTest.index_admin" />
       </list>
     </recent_temporary>
   </component>
@@ -357,18 +386,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AccountControllerTest_index_anonymous - 2019.08.14 at 19h 23m 31s.xml">
-      <configuration name="AccountControllerTest.index_anonymous" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AccountControllerTest_index_admin - 2019.08.14 at 19h 29m 08s.xml">
-      <configuration name="AccountControllerTest.index_admin" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AccountControllerTest_admin_user - 2019.08.14 at 19h 29m 43s.xml">
-      <configuration name="AccountControllerTest.admin_user" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AccountControllerTest_admin_user - 2019.08.14 at 19h 30m 20s.xml">
-      <configuration name="AccountControllerTest.admin_user" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="AccountControllerTest_admin_admin - 2019.08.14 at 19h 30m 50s.xml">
       <configuration name="AccountControllerTest.admin_admin" configurationId="JUnit" />
     </history-entry>
@@ -380,6 +397,24 @@
     </history-entry>
     <history-entry file="AccountControllerTest_index_user_annotation - 2019.08.14 at 19h 38m 27s.xml">
       <configuration name="AccountControllerTest.index_user_annotation" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AccountControllerTest_login - 2019.08.14 at 21h 05m 59s.xml">
+      <configuration name="AccountControllerTest.login" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AccountControllerTest_login - 2019.08.14 at 21h 07m 49s.xml">
+      <configuration name="AccountControllerTest.login" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AccountControllerTest_login - 2019.08.14 at 21h 08m 58s.xml">
+      <configuration name="AccountControllerTest.login" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AccountControllerTest_login - 2019.08.14 at 21h 09m 43s.xml">
+      <configuration name="AccountControllerTest.login" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AccountControllerTest_login - 2019.08.14 at 21h 12m 09s.xml">
+      <configuration name="AccountControllerTest.login" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AccountControllerTest_login_fail - 2019.08.14 at 21h 14m 02s.xml">
+      <configuration name="AccountControllerTest.login_fail" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -548,10 +583,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/sombrero/account/WithUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/sombrero/account/AccountControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="84" column="9" lean-forward="true" selection-start-line="84" selection-start-column="9" selection-end-line="84" selection-end-column="9" />
+        <state relative-caret-position="276">
+          <caret line="123" column="18" selection-start-line="123" selection-start-column="18" selection-end-line="123" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
