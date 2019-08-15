@@ -111,7 +111,8 @@ public class SampleService {
      * -> AbstractAuthenticationProcessingFilter를 상속하고 있는 UsernamePasswordAuthenticationFilter의 attemptAuthentication()이 실행됨.
      * 	  AuthenticationManager에 authentication 요청.
      * 	  기본적으로 AuthenticationManager를 상속하는 ProviderManager의 authentication() 실행.
-     * -> authentication result가 없을 경우 parent의 authenticate()를 호출하여 result(UsernamePasswordAuthenticationToken) 저장.
+     * -> authentication result가 없을 경우 parent의 authenticate()를 호출하여 result 저장.
+     *    (여기에서 result는 Principal을 상속한 Authentication을 상속한 UsernamePasswordAuthenticationToken)
      * -> result가 있을 경우 크리덴셜을 삭제하고 result를 리턴.
      * -> AbstractAuthenticationProcessingFilter의 doFilter()로 돌아와서 authResult에 저장.
      * -> AbstractAuthenticationProcessingFilter의 successfulAuthentication() 실행하여
