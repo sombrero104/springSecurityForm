@@ -4,6 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import sombrero.account.Account;
+import sombrero.account.AccountContext;
+import sombrero.account.AccountRepository;
 
 import java.security.Principal;
 
@@ -12,6 +15,9 @@ public class SampleController {
 
     @Autowired
     SampleService sampleService;
+
+    @Autowired
+    AccountRepository accountRepository;
 
     /**
      * index 페이지
@@ -45,7 +51,14 @@ public class SampleController {
     @GetMapping("/dashboard")
     public String dashboard(Model model, Principal principal) {
         model.addAttribute("message", "Hello " + principal.getName());
+
+        // Spring Security의 구조 디버깅 해보기.
         sampleService.dashboard();
+
+        // ThreadLocal 사용해보기.
+        AccountContext.setAccount(accountRepository.findByUsername(principal.getName()));
+        sampleService.dashboard2();
+
         return "dashboard";
     }
 

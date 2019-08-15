@@ -4,7 +4,10 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
+import sombrero.account.Account;
+import sombrero.account.AccountContext;
 
+import javax.sound.midi.SoundbankResource;
 import java.util.Collection;
 
 @Service
@@ -80,6 +83,18 @@ public class SampleService {
          */
         boolean authenticated = authentication.isAuthenticated();
 
+    }
+
+    /**
+     * ThreadLocal 사용해보기.
+     * 커스텀 AccountContext에 ThreadLocal로 저장한 Account 정보 가져오기.
+     * (SecurityContextHolder의 기본 전략이 ThreadLocal.)
+     */
+    public void dashboard2() {
+        Account account = AccountContext.getAccount();
+        System.out.println("================================");
+        System.out.println(account.getUsername());
+        System.out.println("================================");
     }
 
 }
