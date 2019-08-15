@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import sombrero.account.Account;
 import sombrero.account.AccountContext;
 
-import javax.sound.midi.SoundbankResource;
 import java.util.Collection;
 
 @Service
@@ -96,5 +95,27 @@ public class SampleService {
         System.out.println(account.getUsername());
         System.out.println("================================");
     }
+
+    /**
+     * Spring Security 흐름
+     *
+     * 1. 새로운 요청이 들어올 경우 항상
+     * SecurityContextPersistenceFilter의 doFilter() 실행.
+     * -> HttpSessionSecurityContextRepository의 locadContext() 실행.
+     * -> 세션에 저장되어 있는 context를 가져와서 저장. 없을 경우 새로 생성.
+     *    (ThreadLocalSecurityContextHolderStrategy에 ThreadLocal로 SecurityContext를 저장.)
+     *
+     * 2. 로그인 시 (로그인 성공 시)
+     * AbstractAuthenticationProcessingFilter의 doFilter()가 실행
+     * -> attemptAuthentication() 실행
+     * -> AbstractAuthenticationProcessingFilter를 상속하고 있는 UsernamePasswordAuthenticationFilter의 attemptAuthentication()이 실행됨.
+     * 	  AuthenticationManager에 authentication 요청.
+     * 	  기본적으로 AuthenticationManager를 상속하는 ProviderManager의 authentication() 실행.
+     * -> authentication result가 없을 경우 parent의 authenticate()를 호출하여 result(UsernamePasswordAuthenticationToken) 저장.
+     * -> result가 있을 경우 크리덴셜을 삭제하고 result를 리턴.
+     * -> AbstractAuthenticationProcessingFilter의 doFilter()로 돌아와서 authResult에 저장.
+     * -> AbstractAuthenticationProcessingFilter의 successfulAuthentication() 실행하여
+     *    SecurityContextHolder의 SecurityContext에 authResult를 저장.
+     */
 
 }
