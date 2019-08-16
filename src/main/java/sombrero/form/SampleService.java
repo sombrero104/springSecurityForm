@@ -14,6 +14,8 @@ public class SampleService {
 
     /**
      * Spring Security의 구조.
+     *
+     * Authentication(인증)
      * SecurityContextHolder > SecurityContext > Authentication
      *
      * 1. SecurityContextHolder
@@ -163,5 +165,12 @@ public class SampleService {
      * FilterChainProxy을 빈 이름 'springSecurityFilterChain'으로 등록하고
      * DelegatingFilterProxy가 이 빈 이름으로 delegate(위임)를 함.
      * 그리고 FilterChainProxy가 SecurityConfig를 확인하여 15개의 필터들 중 사용할 필터들을 호출하는 역할을 함.
+     */
+
+    /**
+     * Authorization(권한)
+     *
+     * AccessDecisionManager
+     *
      */
 }
