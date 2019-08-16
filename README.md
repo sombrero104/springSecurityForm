@@ -7,7 +7,8 @@
 DelegatingFilterProxy
  -> FilterChainProxy
  -> SecurityContextPersistenceFilter, UsernamePasswordAuthenticationFilter
- -> SecurityContextHolder -> SecurityContext -> AuthenticationManager -> Authentication
+ -> SecurityContextHolder -> SecurityContext
+ -> AuthenticationManager -> Authentication
 </pre>
 
 #### 1. SecurityContextHolder
