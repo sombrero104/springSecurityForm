@@ -136,7 +136,7 @@ DelegatingFilterProxy가 이 빈 이름으로 delegate(위임)를 함.
 DelegatingFilterProxy -> FilterChainProxy
  -> FilterSecurityInterceptor
  -> AccessDecisionManager -> AccessDecisionVoter
-</pre><br/>
+</pre>
 
 #### AccessDecisionManager
 Access Control(Authrorization, 권한) 결정을 내리는 인터페이스로, 구현체 3가지를 기본으로 제공.<br/>
@@ -167,7 +167,7 @@ Exception을 처리하는 핸들러가 처리하여 로그인 페이지로 이�
 로그인 후 인증이 처리되면 UsernamePasswordAuthenticationToken과 authorities=ROLE_USER를 가지게 됨.<br/>
 ('/dashboard' 패턴의 object가 필요로 하는 attributes를 확인하면 'authenticated'라는 것을 확인할 수 있음.<br/><br/>
 
-### Exception 처리<br/>
+## Exception 처리<br/>
 
 #### ExceptionTranslationFilter
 필터 체인에서 발생하는 AccessDeniedException과 AuthenticationException을 처리하는 필터.<br/>
