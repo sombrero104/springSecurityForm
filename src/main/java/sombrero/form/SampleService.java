@@ -102,7 +102,7 @@ public class SampleService {
      * 1. 새로운 요청이 들어올 경우 항상
      * SecurityContextPersistenceFilter의 doFilter() 실행.
      * -> HttpSessionSecurityContextRepository의 locadContext() 실행.
-     * -> 세션에 저장되어 있는 context를 가져와서 저장. 없을 경우 새로 생성.
+     * -> 세션에 저장되어 있는 context를 가져옴. 없을 경우 새로 생성.
      *    (SecurityContextHolder가 ThreadLocalSecurityContextHolderStrategy에 ThreadLocal로 SecurityContext를 저장.)
      * -> 체인이 끝나면 SecurityContextHolder가 context를 비워줌.
      *
