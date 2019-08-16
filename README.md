@@ -53,7 +53,7 @@ Object credentials = authentication.getCredentials();
 <pre>
 boolean authenticated = authentication.isAuthenticated();
 </pre>
-
+<br/>
 
 ### ThreadLocal 사용해보기.
 커스텀 AccountContext에 ThreadLocal로 저장한 Account 정보 가져오기.
