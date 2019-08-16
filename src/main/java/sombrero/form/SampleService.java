@@ -190,6 +190,11 @@ public class SampleService {
      * FilterSecurityInterceptor
      * AccessDecisionManager를 사용하여 Access Control(Authorization, 권한) 또는 예외 처리하는 필터.
      * FilterChainProxy가 가지고 있는 여러개의 필터 중 하나.
-     * 대부분의 경우 FilterChainProxy의 제일 마지막 필터로 들어있다.
+     * 대부분의 경우 FilterChainProxy의 제일 마지막 필터로 들어있다. (접근이 가능한지 최종적으로 확인.)
+     *
+     * FilterSecurityInterceptor는 Filter를 구현하고 AbstractSecurityInterceptor를 상속하고 있음.
+     * AbstractSecurityInterceptor의 beforeInvocation()에서
+     * this.accessDecisionManager.decide(authenticated, object, attributes);
+     * 이 부분에 디버깅을 걸면 AffirmativeBased를 기본적으로 사용하고 있는 것을 알 수 있음. (AffirmativeBased의 decide()를 호출.)
      */
 }
