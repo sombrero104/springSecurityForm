@@ -10,7 +10,7 @@ DelegatingFilterProxy
  -> SecurityContextHolder -> SecurityContext
  -> AuthenticationManager
     (ProviderManager -> AuthenticationProvider(DaoAuthenticationProvider -> UserDetailsService))
- -> Authentication -> Principal
+ -> Authentication -> Principal, GrantedAuthorities
 </pre>
 
 #### 1. SecurityContextHolder
