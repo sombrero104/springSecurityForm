@@ -171,6 +171,7 @@ public class SampleService {
 
     /**
      * Authorization(권한)
+     * DelegatingFilterProxy -> FilterChainProxy -> FilterSecurityInterceptor -> AccessDecisionManager -> AccessDecisionVoter
      *
      * AccessDecisionManager
      * Access Control(Authrorization, 권한) 결정을 내리는 인터페이스로, 구현체 3가지를 기본으로 제공.
@@ -183,8 +184,12 @@ public class SampleService {
      * AccessDecisionVoter
      * 해당 Authentication이 특정한 Object(patterns)에 접근할 때 필요한 ConfigAttributes를 만족하는지 확인.
      * (ConfigAttribute: SecurityConfig에 설정한 permitAll()이나 hasRole() 등.)
-     *
      * WebExpressionVoter: 웹 시큐리티에서 사용하는 기본 구현체, ROLE_Xxxx가 매치하는지 확인.
      * RoleHierachyVoter: 계층형 ROLE 지원. AMDIN > MANAGER > USER. (ADMIN은 USER 권한도 가지도록..)
+     *
+     * FilterSecurityInterceptor
+     * AccessDecisionManager를 사용하여 Access Control(Authorization, 권한) 또는 예외 처리하는 필터.
+     * FilterChainProxy가 가지고 있는 여러개의 필터 중 하나.
+     * 대부분의 경우 FilterChainProxy의 제일 마지막 필터로 들어있다.
      */
 }
