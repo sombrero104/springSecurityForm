@@ -191,3 +191,8 @@ AbstractSecurityInterceptor 하위 클래스(예, FilterSecurityInterceptor)에�
  -> sendStartAuthentication()으로 보내짐.<br/>
 USER 권한을 가진 사용자가 로그인 후 ADMIN 권한의 페이지 접근 시에도 AccessDeniedException 발생.<br/>
  -> AccessDeniedHandler의 handle()로 보내짐.<br/><br/>
+
+## WebSecurity
+The WebSecurity is created by WebSecurityConfiguration to create the FilterChainProxy<br/>
+known as the Spring Security Filter Chain(springSecurityFilterChain).<br/>
+the springSecurityFilterChain is the Filter that the DelegatingFilterProxy delegates to.<br/>
