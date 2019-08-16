@@ -205,6 +205,7 @@ the springSecurityFilterChain is the Filter that the DelegatingFilterProxy deleg
 Customizations to the WebSecurity can be made by creating a WebSecurityConfigurer
 or more likely by overriding WebSecurityConfigurerAdapter.
 </pre>
+<br/>
 
 ## HttpSecurity
 <pre>
@@ -214,7 +215,6 @@ It allows configuring web based security for specific http requests.
 By default it will be applied to all requests, but can be restricted using
 #requestMatcher(RequestMatcher) or other similar methods.
 </pre>
-<br/>
 
 #### * Example Usage<br/>
 The most basic form based configuration can be seen below.<br/>
