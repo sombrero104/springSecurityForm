@@ -103,7 +103,7 @@ public class SampleService {
      * SecurityContextPersistenceFilter의 doFilter() 실행.
      * -> HttpSessionSecurityContextRepository의 locadContext() 실행.
      * -> 세션에 저장되어 있는 context를 가져와서 저장. 없을 경우 새로 생성.
-     *    (ThreadLocalSecurityContextHolderStrategy에 ThreadLocal로 SecurityContext를 저장.)
+     *    (SecurityContextHolder가 ThreadLocalSecurityContextHolderStrategy에 ThreadLocal로 SecurityContext를 저장.)
      *
      * 2. 로그인 시 (로그인 성공 시)
      * AbstractAuthenticationProcessingFilter의 doFilter()가 실행
@@ -116,7 +116,7 @@ public class SampleService {
      * -> result가 있을 경우 크리덴셜을 삭제하고 result를 리턴.
      * -> AbstractAuthenticationProcessingFilter의 doFilter()로 돌아와서 authResult에 저장.
      * -> AbstractAuthenticationProcessingFilter의 successfulAuthentication() 실행하여
-     *    SecurityContextHolder의 SecurityContext에 authResult를 저장.
+     *    SecurityContextHolder가 SecurityContext에 authResult를 저장.
      */
 
 }
