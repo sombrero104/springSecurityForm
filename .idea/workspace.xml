@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="194f3d26-a6f3-4b88-8487-1b1b962c39a6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sombrero/form/SampleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sombrero/form/SampleService.java" afterDir="false" />
-    </list>
+    <list default="true" id="194f3d26-a6f3-4b88-8487-1b1b962c39a6" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,11 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/sombrero/form/SampleService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="201" column="88" selection-start-line="201" selection-start-column="88" selection-end-line="201" selection-end-column="88" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="51">
+              <caret line="8" column="39" lean-forward="true" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -146,7 +140,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="425" />
+    <option name="x" value="427" />
     <option name="y" value="23" />
     <option name="width" value="1327" />
     <option name="height" value="967" />
@@ -526,7 +520,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="425" y="23" width="1327" height="967" extended-state="0" />
+    <frame x="688" y="23" width="1327" height="967" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19455253" />
@@ -1038,11 +1032,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sombrero/form/SampleService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="201" column="88" selection-start-line="201" selection-start-column="88" selection-end-line="201" selection-end-column="88" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="51">
+          <caret line="8" column="39" lean-forward="true" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
         </state>
       </provider>
     </entry>

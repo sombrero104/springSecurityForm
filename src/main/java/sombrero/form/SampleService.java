@@ -17,7 +17,10 @@ public class SampleService {
      * Spring Security의 구조.
      *
      * Authentication(인증)
-     * SecurityContextHolder > SecurityContext > Authentication
+     * DelegatingFilterProxy
+     *  -> FilterChainProxy
+     *  -> SecurityContextPersistenceFilter, UsernamePasswordAuthenticationFilter
+     *  -> SecurityContextHolder -> SecurityContext -> AuthenticationManager -> Authentication
      *
      * 1. SecurityContextHolder
      *  -> SecurityContext 제공, 기본적으로 ThreadLocal을 사용한다. (하나의 스레드에서 자원 공간을 공유하 방식.)
