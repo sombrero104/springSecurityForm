@@ -9,7 +9,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 @Configuration
 @EnableWebSecurity
-@Order(Ordered.LOWEST_PRECEDENCE - 15)
+@Order(Ordered.LOWEST_PRECEDENCE - 100)
 public class SecurityConfig2 extends WebSecurityConfigurerAdapter {
 
     @Override
