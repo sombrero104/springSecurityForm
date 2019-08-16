@@ -11,9 +11,9 @@ DelegatingFilterProxy
 </pre><br/>
 
 #### 1. SecurityContextHolder
- -> SecurityContext 제공, 기본적으로 ThreadLocal을 사용한다. (하나의 스레드에서 자원 공간을 공유하 방식.)
-     한 스레드에 특화되어 있는 정보. 한 스레드 내에서는 어디에서나 접근 가능. 스레드가 다를 경우 같은 인증 정보를 가져올 수 없음.
-     ThreadLocal 외에 다른 전략 사용 필요.
+ -> SecurityContext 제공, 기본적으로 ThreadLocal을 사용한다. (하나의 스레드에서 자원 공간을 공유하 방식.)<br/>
+     한 스레드에 특화되어 있는 정보. 한 스레드 내에서는 어디에서나 접근 가능. 스레드가 다를 경우 같은 인증 정보를 가져올 수 없음.<br/>
+     ThreadLocal 외에 다른 전략 사용 필요.<br/>
      async하게 threadpool을 사용하지 않는 이상 서블릿은 thread per request(스레드 하나 = 요청 하나)이므로 기본적으로 ThreadLocal 사용.<br/>
 
 #### 2. SecurityContext
@@ -23,21 +23,19 @@ DelegatingFilterProxy
 
 <pre>Authentication authentication = SecurityContextHolder.getContext().getAuthentication();</pre>
 
-#### 4. principal: 인증한 사용자를 나타내는 정보.
-           UserDetailsService에서 리턴한 UserDetails 타입의 객체.
-
-  UserDetails: 애플리케이션이 가지고 있는 유저 정보와 시큐리티가 사용하는 Authentication 객체 사이의 어댑터.
-  UserDetailsService: 유저 정보를 UserDetails 타입으로 가져오는 DAO(Data Access Object) 인터페이스.
-                      유저 정보를 스프링 시큐리티(Authentication Manager)에 제공하여 인증하도록 하는 역할.
+#### 4. principal: 인증한 사용자를 나타내는 정보. UserDetailsService에서 리턴한 UserDetails 타입의 객체.<br/>
+  UserDetails: 애플리케이션이 가지고 있는 유저 정보와 시큐리티가 사용하는 Authentication 객체 사이의 어댑터.<br/>
+  UserDetailsService: 유저 정보를 UserDetails 타입으로 가져오는 DAO(Data Access Object) 인터페이스.<br/>
+                      유저 정보를 스프링 시큐리티(Authentication Manager)에 제공하여 인증하도록 하는 역할.<br/>
 
 <pre>
 // Object principal = authentication.getPrincipal();
 UserDetails userDetails = (UserDetails)authentication.getPrincipal();
 </pre>
 
-#### 5. authorities(GrantedAuthority): "ROLE_USER", "ROLE_ADMIN" 등 사용자가 가지고 있는 권한.
-                               인증 이후, 인가 및 권한을 확인할 때 이 정보를 참조한다.
-                               사용자가 가지고 있는 권한이 여러개일 수도 있으므로 컬렉션 타입.
+#### 5. authorities(GrantedAuthority): "ROLE_USER", "ROLE_ADMIN" 등 사용자가 가지고 있는 권한.<br/>
+    인증 이후, 인가 및 권한을 확인할 때 이 정보를 참조한다.<br/>
+    사용자가 가지고 있는 권한이 여러개일 수도 있으므로 컬렉션 타입.<br/>
 
 <pre>
 Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
@@ -117,14 +115,14 @@ WebSecurityConfigurerAdapter를 상속하여 커스텀한 SecurityConfig가 사�
 
 #### DelegatingFilterProxy와 FilterChainProxy<br/>
 
-서블릿 필터
+서블릿 필터<br/>
 https://tomcat.apache.org/tomcat-5.5-doc/servletapi/javax/servlet/Filter.html<br/>
 
-서블릿 필터의 구현체 DelegatingFilterProxy.
-서블릿 필터 처리를 스프링의 빈으로 위임하는 서블릿 필터.
-DelegatingFilterProxy가 FilterChainProxy에게 필터 처리를 위임함.
-(SecurityFilterAutoConfiguration을 보면 FilterChainProxy의 빈 이름이 'springSecurityFilterChain'으로 등록되는 것을 알 수 있음.
- 이 빈 이름을 사용해서 필터 처리를 위임.)
+서블릿 필터의 구현체 DelegatingFilterProxy.<br/>
+서블릿 필터 처리를 스프링의 빈으로 위임하는 서블릿 필터.<br/>
+DelegatingFilterProxy가 FilterChainProxy에게 필터 처리를 위임함.<br/>
+(SecurityFilterAutoConfiguration을 보면 FilterChainProxy의 빈 이름이 'springSecurityFilterChain'으로 등록되는 것을 알 수 있음.<br/>
+ 이 빈 이름을 사용해서 필터 처리를 위임.)<br/>
 스프링 부트를 사용할 경우 자동으로 등록됨.<br/>
 
 SecurityFilterAutoConfiguration이 DelegatingFilterProxyRegistrationBean을 통해
@@ -138,7 +136,7 @@ DelegatingFilterProxy가 이 빈 이름으로 delegate(위임)를 함.
 DelegatingFilterProxy -> FilterChainProxy
  -> FilterSecurityInterceptor
  -> AccessDecisionManager -> AccessDecisionVoter
-</pre><br/>
+</pre>
 
 #### AccessDecisionManager
 Access Control(Authrorization, 권한) 결정을 내리는 인터페이스로, 구현체 3가지를 기본으로 제공.<br/>
