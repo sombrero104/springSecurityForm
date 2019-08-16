@@ -141,6 +141,27 @@ public class SampleService {
      * 14. ExeptionTranslationFilter
      * 15. FilterSecurityInterceptor
      *
+     * 이 모든 필터들은 FilterChainProxy가 호출.
+     * 또 FilterChainProxy는 DelegatingFilterProxy에 의해서 호출.
      * WebSecurityConfigurerAdapter를 상속하여 커스텀한 SecurityConfig가 사용할 필터 체인 목록을 만드는 역할을 함.
+     */
+
+    /**
+     * DelegatingFilterProxy와 FilterChainProxy
+     *
+     * 서블릿 필터
+     * https://tomcat.apache.org/tomcat-5.5-doc/servletapi/javax/servlet/Filter.html
+     *
+     * 서블릿 필터의 구현체 DelegatingFilterProxy.
+     * 서블릿 필터 처리를 스프링의 빈으로 위임하는 서블릿 필터.
+     * DelegatingFilterProxy가 FilterChainProxy에게 필터 처리를 위임함.
+     * (SecurityFilterAutoConfiguration을 보면 FilterChainProxy의 빈 이름이 'springSecurityFilterChain'으로 등록되는 것을 알 수 있음.
+     *  이 빈 이름을 사용해서 필터 처리를 위임.)
+     * 스프링 부트를 사용할 경우 자동으로 등록됨.
+     *
+     * SecurityFilterAutoConfiguration이 DelegatingFilterProxyRegistrationBean을 통해
+     * FilterChainProxy을 빈 이름 'springSecurityFilterChain'으로 등록하고
+     * DelegatingFilterProxy가 이 빈 이름으로 delegate(위임)를 함.
+     * 그리고 FilterChainProxy가 SecurityConfig를 확인하여 15개의 필터들 중 사용할 필터들을 호출하는 역할을 함.
      */
 }
