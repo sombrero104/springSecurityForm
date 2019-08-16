@@ -8,7 +8,9 @@ DelegatingFilterProxy
  -> FilterChainProxy
  -> SecurityContextPersistenceFilter, UsernamePasswordAuthenticationFilter
  -> SecurityContextHolder -> SecurityContext
- -> AuthenticationManager -> Authentication
+ -> AuthenticationManager
+    (ProviderManager -> AuthenticationProvider(DaoAuthenticationProvider -> UserDetailsService))
+ -> Authentication -> Principal
 </pre>
 
 #### 1. SecurityContextHolder
@@ -136,7 +138,8 @@ DelegatingFilterProxy가 이 빈 이름으로 delegate(위임)를 함.
 <pre>
 DelegatingFilterProxy -> FilterChainProxy
  -> FilterSecurityInterceptor
- -> AccessDecisionManager -> AccessDecisionVoter
+ -> AccessDecisionManager
+    (AffirmativeBased -> AccessDecisionVoter(WebExpressionVoter -> SecurityExpressionHandler))
 </pre><br/>
 
 #### AccessDecisionManager
