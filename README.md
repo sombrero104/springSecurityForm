@@ -42,7 +42,7 @@ UserDetails userDetails = (UserDetails)authentication.getPrincipal();
 Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
 </pre>
 
-#### 6. credentials: 인증할 때만 사용. (인증을 한 다음에는 값을 가지고 있을 필요가 없기 때문에 현재는 값이 없음.)
+#### 6. credentials: 인증할 때만 사용. (인증을 한 다음에는 값을 가지고 있을 필요가 없음.)
 
 <pre>
 Object credentials = authentication.getCredentials();
