@@ -193,7 +193,7 @@ AbstractSecurityInterceptor 하위 클래스(예, FilterSecurityInterceptor)에�
 처음에 로그인하지 않은 상태에서 /dashboard 접근 시 AccessDeniedException 발생.<br/>
  -> sendStartAuthentication()으로 보내짐.<br/>
 USER 권한을 가진 사용자가 로그인 후 ADMIN 권한의 페이지 접근 시에도 AccessDeniedException 발생.<br/>
- -> AccessDeniedHandler의 handle()로 보내짐.<br/><br/><br/>
+ -> AccessDeniedHandler의 handle()로 보내짐.<br/><br/><br/><br/>
 
 ## WebSecurity
 <pre>
