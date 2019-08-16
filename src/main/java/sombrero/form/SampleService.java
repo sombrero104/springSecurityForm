@@ -171,6 +171,17 @@ public class SampleService {
      * Authorization(권한)
      *
      * AccessDecisionManager
+     * Access Control(Authrorization, 권한) 결정을 내리는 인터페이스로, 구현체 3가지를 기본으로 제공.
+     * (1) AffirmativeBased: 여러 AccessDecisionVoter중에 하나의 voter라도 허용하면 허용. (기본 전략)
+     *      모든 voter가 허용하지 않을 경우 exception 발생.
+     *      AccessDecisionManager 인터페이스를 구현한 AffirmativeBased의 decide()가 호출됨.
+     * (2) ConsensusBased: 다수결
+     * (3) UnanimousBased: 만장일치
      *
+     * AccessDecisionVoter
+     * 해당 Authentication이 특정한 Object(patterns)에 접근할 때 필요한 ConfigAttributes를 만족하는지 확인.
+     * (ConfigAttribute: SecurityConfig에 설정한 permitAll()이나 hasRole() 등.)
+     *
+     * WebExpressionVoter: 웹 시큐리티에서 사용하는 기본 구현체, ROLE_Xxxx가 매치하는지 확인.
      */
 }
