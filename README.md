@@ -128,7 +128,7 @@ DelegatingFilterProxy가 FilterChainProxy에게 필터 처리를 위임함.<br/>
 SecurityFilterAutoConfiguration이 DelegatingFilterProxyRegistrationBean을 통해
 FilterChainProxy을 빈 이름 'springSecurityFilterChain'으로 등록하고
 DelegatingFilterProxy가 이 빈 이름으로 delegate(위임)를 함.
-그리고 FilterChainProxy가 SecurityConfig를 확인하여 15개의 필터들 중 사용할 필터들을 호출하는 역할을 함.<br/><br/>
+그리고 FilterChainProxy가 SecurityConfig를 확인하여 15개의 필터들 중 사용할 필터들을 호출하는 역할을 함.<br/><br/><br/>
 
 ## Authorization(권한)<br/>
 
@@ -136,7 +136,7 @@ DelegatingFilterProxy가 이 빈 이름으로 delegate(위임)를 함.
 DelegatingFilterProxy -> FilterChainProxy
  -> FilterSecurityInterceptor
  -> AccessDecisionManager -> AccessDecisionVoter
-</pre>
+</pre><br/>
 
 #### AccessDecisionManager
 Access Control(Authrorization, 권한) 결정을 내리는 인터페이스로, 구현체 3가지를 기본으로 제공.<br/>
