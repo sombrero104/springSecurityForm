@@ -8,19 +8,20 @@ DelegatingFilterProxy
  -> FilterChainProxy
  -> SecurityContextPersistenceFilter, UsernamePasswordAuthenticationFilter
  -> SecurityContextHolder -> SecurityContext -> AuthenticationManager -> Authentication
-</pre>
+</pre><br/>
 
 #### 1. SecurityContextHolder
  -> SecurityContext 제공, 기본적으로 ThreadLocal을 사용한다. (하나의 스레드에서 자원 공간을 공유하 방식.)
      한 스레드에 특화되어 있는 정보. 한 스레드 내에서는 어디에서나 접근 가능. 스레드가 다를 경우 같은 인증 정보를 가져올 수 없음.
      ThreadLocal 외에 다른 전략 사용 필요.
-     async하게 threadpool을 사용하지 않는 이상 서블릿은 thread per request(스레드 하나 = 요청 하나)이므로 기본적으로 ThreadLocal 사용.
+     async하게 threadpool을 사용하지 않는 이상 서블릿은 thread per request(스레드 하나 = 요청 하나)이므로 기본적으로 ThreadLocal 사용.<br/>
+
 #### 2. SecurityContext
- -> Authentication 제공.
+ -> Authentication 제공.<br/>
 
 #### 3. authentication: Principal과 GrantAuthority 제공.
 
-<pre>Authentication authentication = SecurityContextHolder.getContext().getAuthentication();</pre>
+<pre>Authentication authentication = SecurityContextHolder.getContext().getAuthentication();</pre><br/>
 
 #### 4. principal: 인증한 사용자를 나타내는 정보.
            UserDetailsService에서 리턴한 UserDetails 타입의 객체.
@@ -32,7 +33,7 @@ DelegatingFilterProxy
 <pre>
 // Object principal = authentication.getPrincipal();
 UserDetails userDetails = (UserDetails)authentication.getPrincipal();
-</pre>
+</pre><br/>
 
 #### 5. authorities(GrantedAuthority): "ROLE_USER", "ROLE_ADMIN" 등 사용자가 가지고 있는 권한.
                                인증 이후, 인가 및 권한을 확인할 때 이 정보를 참조한다.
@@ -40,20 +41,19 @@ UserDetails userDetails = (UserDetails)authentication.getPrincipal();
 
 <pre>
 Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
-</pre>
+</pre><br/>
 
 #### 6. credentials: 인증할 때만 사용. (인증을 한 다음에는 값을 가지고 있을 필요가 없기 때문에 현재는 값이 없음.)
 
 <pre>
 Object credentials = authentication.getCredentials();
-</pre>
-
+</pre><br/>
 
 #### 7. authenticated: 인증된 사용자인지 나타내는 정보.
 
 <pre>
 boolean authenticated = authentication.isAuthenticated();
-</pre>
+</pre><br/>
 
 
 ### ThreadLocal 사용해보기.
@@ -67,17 +67,16 @@ public void dashboard2() {
     System.out.println(account.getUsername());
     System.out.println("================================");
 }
-</pre>
+</pre><br/>
 
-
-# Spring Security 흐름
+# Spring Security 흐름<br/>
 
 1. 새로운 요청이 들어올 경우 항상
 SecurityContextPersistenceFilter의 doFilter() 실행.
 -> HttpSessionSecurityContextRepository의 locadContext() 실행.
 -> 세션에 저장되어 있는 context를 가져옴. 없을 경우 새로 생성.
    (SecurityContextHolder가 ThreadLocalSecurityContextHolderStrategy에 ThreadLocal로 SecurityContext를 저장.)
--> 체인이 끝나면 SecurityContextHolder가 context를 비워줌.
+-> 체인이 끝나면 SecurityContextHolder가 context를 비워줌.<br/>
 
 2. 로그인 시 (로그인 성공 시)
 AbstractAuthenticationProcessingFilter의 doFilter()가 실행
@@ -92,11 +91,9 @@ AbstractAuthenticationProcessingFilter의 doFilter()가 실행
 -> result가 있을 경우 크리덴셜을 삭제하고 result를 리턴.
 -> AbstractAuthenticationProcessingFilter의 doFilter()로 돌아와서 authResult에 저장.
 -> AbstractAuthenticationProcessingFilter의 successfulAuthentication() 실행하여
-   SecurityContextHolder가 SecurityContext에 authResult를 저장.
+   SecurityContextHolder가 SecurityContext에 authResult를 저장.<br/>
 
-
-
-## Spring Security Filter
+## Spring Security Filter<br/>
 
 1. WebAsyncManagerIntergrationFilter
 2. SecurityContextPersistenceFilter
@@ -112,38 +109,34 @@ AbstractAuthenticationProcessingFilter의 doFilter()가 실행
 12. AnonymouseAuthenticationFilter
 13. SessionManagementFilter
 14. ExeptionTranslationFilter
-15. FilterSecurityInterceptor
+15. FilterSecurityInterceptor<br/>
 
 이 모든 필터들은 FilterChainProxy가 호출.
 또 FilterChainProxy는 DelegatingFilterProxy에 의해서 호출.
-WebSecurityConfigurerAdapter를 상속하여 커스텀한 SecurityConfig가 사용할 필터 체인 목록을 만드는 역할을 함.
+WebSecurityConfigurerAdapter를 상속하여 커스텀한 SecurityConfig가 사용할 필터 체인 목록을 만드는 역할을 함.<br/>
 
-
-
-#### DelegatingFilterProxy와 FilterChainProxy
+#### DelegatingFilterProxy와 FilterChainProxy<br/>
 
 서블릿 필터
-https://tomcat.apache.org/tomcat-5.5-doc/servletapi/javax/servlet/Filter.html
+https://tomcat.apache.org/tomcat-5.5-doc/servletapi/javax/servlet/Filter.html<br/>
 
 서블릿 필터의 구현체 DelegatingFilterProxy.
 서블릿 필터 처리를 스프링의 빈으로 위임하는 서블릿 필터.
 DelegatingFilterProxy가 FilterChainProxy에게 필터 처리를 위임함.
 (SecurityFilterAutoConfiguration을 보면 FilterChainProxy의 빈 이름이 'springSecurityFilterChain'으로 등록되는 것을 알 수 있음.
  이 빈 이름을 사용해서 필터 처리를 위임.)
-스프링 부트를 사용할 경우 자동으로 등록됨.
+스프링 부트를 사용할 경우 자동으로 등록됨.<br/>
 
 SecurityFilterAutoConfiguration이 DelegatingFilterProxyRegistrationBean을 통해
 FilterChainProxy을 빈 이름 'springSecurityFilterChain'으로 등록하고
 DelegatingFilterProxy가 이 빈 이름으로 delegate(위임)를 함.
-그리고 FilterChainProxy가 SecurityConfig를 확인하여 15개의 필터들 중 사용할 필터들을 호출하는 역할을 함.
+그리고 FilterChainProxy가 SecurityConfig를 확인하여 15개의 필터들 중 사용할 필터들을 호출하는 역할을 함.<br/>
 
-
-
-## Authorization(권한)
+## Authorization(권한)<br/>
 
 <pre>
 DelegatingFilterProxy -> FilterChainProxy -> FilterSecurityInterceptor -> AccessDecisionManager -> AccessDecisionVoter
-</pre>
+</pre><br/>
 
 #### AccessDecisionManager
 Access Control(Authrorization, 권한) 결정을 내리는 인터페이스로, 구현체 3가지를 기본으로 제공.
@@ -151,36 +144,34 @@ Access Control(Authrorization, 권한) 결정을 내리는 인터페이스로, �
      모든 voter가 허용하지 않을 경우 exception 발생.
      AccessDecisionManager 인터페이스를 구현한 AffirmativeBased의 decide()가 호출됨.
 (2) ConsensusBased: 다수결
-(3) UnanimousBased: 만장일치
+(3) UnanimousBased: 만장일치<br/>
 
 #### AccessDecisionVoter
 해당 Authentication이 특정한 Object(patterns)에 접근할 때 필요한 ConfigAttributes를 만족하는지 확인.
 (ConfigAttribute: SecurityConfig에 설정한 permitAll()이나 hasRole() 등.)
 WebExpressionVoter: 웹 시큐리티에서 사용하는 기본 구현체, ROLE_Xxxx가 매치하는지 확인.
-RoleHierachyVoter: 계층형 ROLE 지원. AMDIN > MANAGER > USER. (ADMIN은 USER 권한도 가지도록..)
+RoleHierachyVoter: 계층형 ROLE 지원. AMDIN > MANAGER > USER. (ADMIN은 USER 권한도 가지도록..)<br/>
 
 #### FilterSecurityInterceptor
 AccessDecisionManager를 사용하여 Access Control(Authorization, 권한) 또는 예외 처리하는 필터.
 FilterChainProxy가 가지고 있는 여러개의 필터 중 하나.
-대부분의 경우 FilterChainProxy의 제일 마지막 필터로 들어있다. (접근이 가능한지 최종적으로 확인.)
+대부분의 경우 FilterChainProxy의 제일 마지막 필터로 들어있다. (접근이 가능한지 최종적으로 확인.)<br/>
 
 FilterSecurityInterceptor는 Filter를 구현하고 AbstractSecurityInterceptor를 상속하고 있음.
 AbstractSecurityInterceptor의 beforeInvocation()에서
 this.accessDecisionManager.decide(authenticated, object, attributes);
-이 부분에 디버깅을 걸면 AffirmativeBased를 기본적으로 사용하고 있는 것을 알 수 있음. (AffirmativeBased의 decide()를 호출.)
+이 부분에 디버깅을 걸면 AffirmativeBased를 기본적으로 사용하고 있는 것을 알 수 있음. (AffirmativeBased의 decide()를 호출.)<br/>
 
 익명사용자(AnonymousAuthenticationToken)으로 인증이 필요한 페이지에 접근할 경우 AccessDeniedException 발생.
 Exception을 처리하는 핸들러가 처리하여 로그인 페이지로 이동.
 로그인 후 인증이 처리되면 UsernamePasswordAuthenticationToken과 authorities=ROLE_USER를 가지게 됨.
-('/dashboard' 패턴의 object가 필요로 하는 attributes를 확인하면 'authenticated'라는 것을 확인할 수 있음.
+('/dashboard' 패턴의 object가 필요로 하는 attributes를 확인하면 'authenticated'라는 것을 확인할 수 있음.<br/>
 
-
-
-### Exception 처리
+### Exception 처리<br/>
 
 #### ExceptionTranslationFilter
 필터 체인에서 발생하는 AccessDeniedException과 AuthenticationException을 처리하는 필터.
-(FilterSecurityInterceptor의 상위 클래스인 AbstractSecurityInterceptor에서 발생한 예외 처리기.)
+(FilterSecurityInterceptor의 상위 클래스인 AbstractSecurityInterceptor에서 발생한 예외 처리기.)<br/>
 
 #### AuthenticationException 발생 시 (인증 에러)
 AuthenticationEntryPoint 실행. (인증 처리기에 위임. 인증이 될 때까지 인증 시도.)
@@ -189,13 +180,13 @@ AbstractSecurityInterceptor 하위 클래스(예, FilterSecurityInterceptor)에�
  -> UsernamePasswordAuthenticationFilter에서 발생한 에러(폼 로그인 시 발생하는 에러)는 ExceptionTranslationFilter에서 처리하지 않음.
     AbstractAuthenticationProcessingFilter(UsernamePasswordAuthenticationFitler의 상위 클래스) 내부에서 직접 처리.
     unsuccessfulAuthentication() -> saveException()이 호출되어 세션 애트리뷰트에 에러 메세지를 담아둠.
-    이 에러 메세지를 기반으로 DefaultLoginPageGeneratingFilter가 로그인 페이지 뷰를 보여줄 때 에러 메세지를 같이 출력해줌.
+    이 에러 메세지를 기반으로 DefaultLoginPageGeneratingFilter가 로그인 페이지 뷰를 보여줄 때 에러 메세지를 같이 출력해줌.<br/>
 
 #### AccessDeniedException 발생 시 (접근 거부)
 익명 사용자라면 AuthenticationEntryPoint 실행. (인증을 하도록 인증 처리기에 위임.)
-익명 사용자가 아니라면(이미 인증된 사용자일 경우) AccessDeniedHandler에게 위임.
+익명 사용자가 아니라면(이미 인증된 사용자일 경우) AccessDeniedHandler에게 위임.<br/>
 
 처음에 로그인하지 않은 상태에서 /dashboard 접근 시 AccessDeniedException 발생.
  -> sendStartAuthentication()으로 보내짐.
 USER 권한을 가진 사용자가 로그인 후 ADMIN 권한의 페이지 접근 시에도 AccessDeniedException 발생.
- -> AccessDeniedHandler의 handle()로 보내짐.
+ -> AccessDeniedHandler의 handle()로 보내짐.<br/>
