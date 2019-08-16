@@ -196,7 +196,9 @@ USER 권한을 가진 사용자가 로그인 후 ADMIN 권한의 페이지 접�
 <pre>
 The WebSecurity is created by WebSecurityConfiguration to create the FilterChainProxy
 known as the Spring Security Filter Chain(springSecurityFilterChain).
+
 the springSecurityFilterChain is the Filter that the DelegatingFilterProxy delegates to.
+
 Customizations to the WebSecurity can be made by creating a WebSecurityConfigurer
 or more likely by overriding WebSecurityConfigurerAdapter.
 </pre>
