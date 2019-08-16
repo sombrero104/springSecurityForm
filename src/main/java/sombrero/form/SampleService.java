@@ -104,6 +104,7 @@ public class SampleService {
      * -> HttpSessionSecurityContextRepository의 locadContext() 실행.
      * -> 세션에 저장되어 있는 context를 가져와서 저장. 없을 경우 새로 생성.
      *    (SecurityContextHolder가 ThreadLocalSecurityContextHolderStrategy에 ThreadLocal로 SecurityContext를 저장.)
+     * -> 체인이 끝나면 SecurityContextHolder가 context를 비워줌.
      *
      * 2. 로그인 시 (로그인 성공 시)
      * AbstractAuthenticationProcessingFilter의 doFilter()가 실행
