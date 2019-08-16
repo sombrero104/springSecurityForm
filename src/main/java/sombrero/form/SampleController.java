@@ -63,12 +63,21 @@ public class SampleController {
     }
 
     /**
-     * 관리자 권한으로 로그인한 사용자만 볼 수 있는 admin 페이지
+     * ADMIN 권한으로 로그인한 사용자만 볼 수 있는 admin 페이지
      */
     @GetMapping("/admin")
     public String admin(Model model, Principal principal) {
         model.addAttribute("message", "Hello admin, " + principal.getName());
         return "admin";
+    }
+
+    /**
+     * USER 권한으로 로그인한 사용자만 볼 수 있는 user 페이지
+     */
+    @GetMapping("/user")
+    public String user(Model model, Principal principal) {
+        model.addAttribute("message", "Hello user, " + principal.getName());
+        return "user";
     }
 
 }

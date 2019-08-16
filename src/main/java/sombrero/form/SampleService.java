@@ -3,6 +3,7 @@ package sombrero.form;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import sombrero.account.Account;
 import sombrero.account.AccountContext;
@@ -54,7 +55,8 @@ public class SampleService {
          *  Username: sombrero; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true;
          *  AccountNonLocked: true; Granted Authorities: ROLE_USER
          */
-        Object principal = authentication.getPrincipal();
+        // Object principal = authentication.getPrincipal();
+        UserDetails userDetails = (UserDetails)authentication.getPrincipal();
 
         /**
          * 5. authorities(GrantedAuthority): "ROLE_USER", "ROLE_ADMIN" 등 사용자가 가지고 있는 권한.
@@ -183,5 +185,6 @@ public class SampleService {
      * (ConfigAttribute: SecurityConfig에 설정한 permitAll()이나 hasRole() 등.)
      *
      * WebExpressionVoter: 웹 시큐리티에서 사용하는 기본 구현체, ROLE_Xxxx가 매치하는지 확인.
+     * RoleHierachyVoter: 계층형 ROLE 지원. AMDIN > MANAGER > USER. (ADMIN은 USER 권한도 가지도록..)
      */
 }
