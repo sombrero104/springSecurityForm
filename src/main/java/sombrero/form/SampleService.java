@@ -122,4 +122,25 @@ public class SampleService {
      *    SecurityContextHolder가 SecurityContext에 authResult를 저장.
      */
 
+    /**
+     * Spring Security Filter
+     *
+     * 1. WebAsyncManagerIntergrationFilter
+     * 2. SecurityContextPersistenceFilter
+     * 3. HeaderWriterFilter
+     * 4. CsrfFilter
+     * 5. LogoutFilter
+     * 6. UsernamePasswordAuthenticationFilter
+     * 7. DefaultLoginPageGeneratingFilter
+     * 8. DefaultLogoutPageGeneratingFilter
+     * 9. BasicAuthenticationFilter
+     * 10. RequestCacheAwareFtiler
+     * 11. SecurityContextHolderAwareReqeustFilter
+     * 12. AnonymouseAuthenticationFilter
+     * 13. SessionManagementFilter
+     * 14. ExeptionTranslationFilter
+     * 15. FilterSecurityInterceptor
+     *
+     * WebSecurityConfigurerAdapter를 상속하여 커스텀한 SecurityConfig가 사용할 필터 체인 목록을 만드는 역할을 함.
+     */
 }
