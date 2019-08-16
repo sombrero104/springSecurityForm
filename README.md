@@ -124,6 +124,7 @@ DelegatingFilterProxy가 FilterChainProxy에게 필터 처리를 위임함.<br/>
 (SecurityFilterAutoConfiguration을 보면 FilterChainProxy의 빈 이름이 'springSecurityFilterChain'으로 등록되는 것을 알 수 있음.<br/>
  이 빈 이름을 사용해서 필터 처리를 위임.)<br/>
 스프링 부트를 사용할 경우 자동으로 등록됨.<br/>
+스프링 부트 없이 스프링 시큐리티를 설정할 때는 AbstractSecurityWebApplicationInitializer를 상속 받아서 사용.<br/>
 
 SecurityFilterAutoConfiguration이 DelegatingFilterProxyRegistrationBean을 통해
 FilterChainProxy을 빈 이름 'springSecurityFilterChain'으로 등록하고
