@@ -55,7 +55,7 @@ boolean authenticated = authentication.isAuthenticated();
 </pre>
 <br/>
 
-#### * ThreadLocal 사용해보기.
+### ** ThreadLocal 사용해보기.
 커스텀 AccountContext에 ThreadLocal로 저장한 Account 정보 가져오기.
 (SecurityContextHolder의 기본 전략이 ThreadLocal.)
 
