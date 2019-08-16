@@ -219,8 +219,8 @@ By default it will be applied to all requests, but can be restricted using
 #### * Example Usage<br/>
 The most basic form based configuration can be seen below.<br/>
 The configuration will require that any URL that is requested will require a User with the role "ROLE_USER".<br/>
-It also defines an in memory authentication scheme with a user that has the username "user", the password "password", and the role "ROLE_USER". For additional examples,<br/>
-refer to the Java Doc of individual methods on HttpSecurity.<br/>
+It also defines an in memory authentication scheme with a user that has the username "user", the password "password", and the role "ROLE_USER".<br/>
+For additional examples, refer to the Java Doc of individual methods on HttpSecurity.<br/>
 
 <pre>
 @Configuration
