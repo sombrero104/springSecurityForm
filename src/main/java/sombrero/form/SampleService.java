@@ -205,4 +205,20 @@ public class SampleService {
      * 로그인 후 인증이 처리되면 UsernamePasswordAuthenticationToken과 authorities=ROLE_USER를 가지게 됨.
      * ('/dashboard' 패턴의 object가 필요로 하는 attributes를 확인하면 'authenticated'라는 것을 확인할 수 있음.
      */
+
+    /**
+     * Exception 처리
+     *
+     * ExceptionTranslationFilter
+     * 필터 체인에서 발생하는 AccessDeniedException과 AuthenticationException을 처리하는 필터.
+     * (FilterSecurityInterceptor의 상위 클래스인 AbstractSecurityInterceptor에서 발생한 예외 처리기.)
+     *
+     * AuthenticationException 발생 시 (인증 에러)
+     * AuthenticationEntryPoint 실행. (인증 처리기에 위임. 인증이 될 때까지 인증 시도.)
+     * AbstractSecurityInterceptor 하위 클래스(예, FilterSecurityInterceptor)에서 발생하는 예외만 처리.
+     *
+     * AccessDeniedException 발생 시 (접근 거부)
+     * 익명 사용자라면 AuthenticationEntryPoint 실행. (인증을 하도록 인증 처리기에 위임.)
+     * 익명 사용자가 아니라면(이미 인증된 사용자일 경우) AccessDeniedHandler에게 위임.
+     */
 }
