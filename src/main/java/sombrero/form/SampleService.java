@@ -220,5 +220,10 @@ public class SampleService {
      * AccessDeniedException 발생 시 (접근 거부)
      * 익명 사용자라면 AuthenticationEntryPoint 실행. (인증을 하도록 인증 처리기에 위임.)
      * 익명 사용자가 아니라면(이미 인증된 사용자일 경우) AccessDeniedHandler에게 위임.
+     *
+     * 처음에 로그인하지 않은 상태에서 /dashboard 접근 시 AccessDeniedException 발생.
+     *  -> sendStartAuthentication()으로 보내짐.
+     * USER 권한을 가진 사용자가 로그인 후 ADMIN 권한의 페이지 접근 시에도 AccessDeniedException 발생.
+     *  -> AccessDeniedHandler의 handle()로 보내짐.
      */
 }
