@@ -25,9 +25,9 @@ DelegatingFilterProxy
 <pre>Authentication authentication = SecurityContextHolder.getContext().getAuthentication();</pre>
 
 #### 4. principal: 인증한 사용자를 나타내는 정보. UserDetailsService에서 리턴한 UserDetails 타입의 객체.<br/>
-  UserDetails: 애플리케이션이 가지고 있는 유저 정보와 시큐리티가 사용하는 Authentication 객체 사이의 어댑터.<br/>
-  UserDetailsService: 유저 정보를 UserDetails 타입으로 가져오는 DAO(Data Access Object) 인터페이스.<br/>
-                      유저 정보를 스프링 시큐리티(Authentication Manager)에 제공하여 인증하도록 하는 역할.<br/>
+UserDetails: 애플리케이션이 가지고 있는 유저 정보와 시큐리티가 사용하는 Authentication 객체 사이의 어댑터.<br/>
+UserDetailsService: 유저 정보를 UserDetails 타입으로 가져오는 DAO(Data Access Object) 인터페이스.<br/>
+                  유저 정보를 스프링 시큐리티(Authentication Manager)에 제공하여 인증하도록 하는 역할.<br/>
 
 <pre>
 // Object principal = authentication.getPrincipal();
@@ -35,8 +35,8 @@ UserDetails userDetails = (UserDetails)authentication.getPrincipal();
 </pre>
 
 #### 5. authorities(GrantedAuthority): "ROLE_USER", "ROLE_ADMIN" 등 사용자가 가지고 있는 권한.<br/>
-    인증 이후, 인가 및 권한을 확인할 때 이 정보를 참조한다.<br/>
-    사용자가 가지고 있는 권한이 여러개일 수도 있으므로 컬렉션 타입.<br/>
+인증 이후, 인가 및 권한을 확인할 때 이 정보를 참조한다.<br/>
+사용자가 가지고 있는 권한이 여러개일 수도 있으므로 컬렉션 타입.<br/>
 
 <pre>
 Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
