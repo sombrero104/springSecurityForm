@@ -210,11 +210,13 @@ or more likely by overriding WebSecurityConfigurerAdapter.
 <pre>
 A HttpSecurity is similar to Spring Security's XML <http> element in the namespace configuration.
 It allows configuring web based security for specific http requests.
+
 By default it will be applied to all requests, but can be restricted using
 #requestMatcher(RequestMatcher) or other similar methods.
 </pre>
+<br/>
 
-Example Usage<br/>
+#### * Example Usage<br/>
 The most basic form based configuration can be seen below.<br/>
 The configuration will require that any URL that is requested will require a User with the role "ROLE_USER".<br/>
 It also defines an in memory authentication scheme with a user that has the username "user"<br/>
@@ -225,7 +227,6 @@ refer to the Java Doc of individual methods on HttpSecurity.<br/>
 @Configuration
 @EnableWebSecurity
 public class FormLoginSecurityConfig extends WebSecurityConfigurerAdapter {
-
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests().antMatchers(&quot;/**&quot;).hasRole(&quot;USER&quot;).and().formLogin();
