@@ -196,5 +196,10 @@ public class SampleService {
      * AbstractSecurityInterceptor의 beforeInvocation()에서
      * this.accessDecisionManager.decide(authenticated, object, attributes);
      * 이 부분에 디버깅을 걸면 AffirmativeBased를 기본적으로 사용하고 있는 것을 알 수 있음. (AffirmativeBased의 decide()를 호출.)
+     *
+     * 익명사용자(AnonymousAuthenticationToken)으로 인증이 필요한 페이지에 접근할 경우 AccessDeniedException 발생.
+     * Exception을 처리하는 핸들러가 처리하여 로그인 페이지로 이동.
+     * 로그인 후 인증이 처리되면 UsernamePasswordAuthenticationToken과 authorities=ROLE_USER를 가지게 됨.
+     * ('/dashboard' 패턴의 object가 필요로 하는 attributes를 확인하면 'authenticated'라는 것을 확인할 수 있음.
      */
 }
