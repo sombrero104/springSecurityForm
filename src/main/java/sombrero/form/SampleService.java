@@ -109,7 +109,9 @@ public class SampleService {
      * 2. 로그인 시 (로그인 성공 시)
      * AbstractAuthenticationProcessingFilter의 doFilter()가 실행
      * -> attemptAuthentication() 실행
-     * -> AbstractAuthenticationProcessingFilter를 상속하고 있는 UsernamePasswordAuthenticationFilter의 attemptAuthentication()이 실행됨.
+     * -> 템플릿 메소드 패턴으로
+     *    AbstractAuthenticationProcessingFilter를 상속하고 있는 UsernamePasswordAuthenticationFilter의 attemptAuthentication()이 실행됨.
+     *    (UsernamePasswordAuthenticationFilter: 폼 인증을 처리하는 필터.)
      * 	  AuthenticationManager에 authentication 요청.
      * 	  기본적으로 AuthenticationManager를 상속하는 ProviderManager의 authentication() 실행.
      * -> authentication result가 없을 경우 parent의 authenticate()를 호출하여 result 저장.
