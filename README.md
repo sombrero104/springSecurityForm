@@ -237,6 +237,7 @@ public class FormLoginSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 }
 </pre>
+<br/>
 
 ### WebAsyncManagerIntegrationFilter
 스프링 MVC의 Async 기능(핸들러에서 Callable을 리턴할 수 있는 기능)을 사용할 때에도 SecurityContext를 공유하도록 도와주는 필터.<br/>
