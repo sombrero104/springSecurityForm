@@ -16,6 +16,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler;
 import org.springframework.security.web.access.expression.WebExpressionVoter;
 import sombrero.account.AccountService;
@@ -91,6 +92,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.formLogin();
         http.httpBasic();
         // 필터 15개
+
+        /**
+         * SecurityContextHolder의 전략 설정 변경.
+         *
+         * MODE_INHERITABLETHREADLOCAL
+         *  => 현재 스레드내에서 하위 스레드를 생성할 경우, SecurityContextHolder 공유가 가능하도록 설정.
+         */
+        SecurityContextHolder.setStrategyName(SecurityContextHolder.MODE_INHERITABLETHREADLOCAL);
     }
 
     /**

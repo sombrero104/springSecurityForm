@@ -110,7 +110,7 @@ public class SampleController {
      * Callable: 비록 다른 쓰레드지만 그 안에서는 동일한 SecurityContext를 참조할 수 있다.
      * PostProcess: SecurityContext를 정리(clean up)한다.
      */
-    @GetMapping("/asyncHandler")
+    @GetMapping("/async-handler")
     @ResponseBody
     public Callable<String> asyncHandler() {
         SecurityLogger.log("MVC");
@@ -129,6 +129,15 @@ public class SampleController {
                 return "Acync Handler";
             }
         };*/
+    }
+
+    @GetMapping("/async-service")
+    @ResponseBody
+    public String asyncService() {
+        SecurityLogger.log("MVC, before async service");
+        sampleService.asyncService();
+        SecurityLogger.log("MVC, after async service");
+        return "Async Service";
     }
 
 }

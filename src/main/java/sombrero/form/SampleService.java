@@ -1,5 +1,6 @@
 package sombrero.form;
 
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -7,6 +8,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import sombrero.account.Account;
 import sombrero.account.AccountContext;
+import sombrero.common.SecurityLogger;
 
 import java.util.Collection;
 
@@ -101,6 +103,42 @@ public class SampleService {
         System.out.println("================================");
         System.out.println(account.getUsername());
         System.out.println("================================");
+    }
+
+    /**
+     * @Async
+     * 별도의 스레드를 만들어서 비동기적으로 호출해줌.
+     * @Async 애노테이션만 붙이면 다른 스레드로 동작하지 않음. (그냥 같은 스레드로 동작.)
+     *  => 스프링부트 실행 Application에 @EnableAsync를 붙여야 제대로 다른 스레드로 동작함. (기본적인 스레드풀보다 다른 스레드풀 설정 권장.)
+     *
+     * SecurityContextHolder의 기본 전략이 ThreadLocal이기 때문에
+     * 기본적으로 @Async를 사용하는 곳에서는 SecurityContextHolder 공유가 안됨. (인증된 사용자 정보를 사용할 수 없음.)
+     *  => SecurityContextHolder의 전략을 바꾸는 설정 필요.
+     *  => SecurityConfig의 configure(HttpSecurity http)에 아래 설정 추가.
+     *      SecurityContextHolder.setStrategyName(SecurityContextHolder.MODE_INHERITABLETHREADLOCAL);
+     *
+     * 실행 결과:
+     * ---------------------------------------------------
+     * # MVC, before async service
+     * # thread.getName(): http-nio-8080-exec-2
+     * # principal: org.springframework.security.core.userdetails.User@59957021: Username: sombrero; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Granted Authorities: ROLE_USER
+     * ---------------------------------------------------
+     * ---------------------------------------------------
+     * # MVC, after async service
+     * # thread.getName(): http-nio-8080-exec-2
+     * # principal: org.springframework.security.core.userdetails.User@59957021: Username: sombrero; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Granted Authorities: ROLE_USER
+     * ---------------------------------------------------
+     * ---------------------------------------------------
+     * # Async service is called.
+     * # thread.getName(): task-1
+     * # principal: org.springframework.security.core.userdetails.User@59957021: Username: sombrero; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Granted Authorities: ROLE_USER
+     * ---------------------------------------------------
+     *
+     *  => 동일한 Principal을 참조하고 있는 것을 확인할 수 있음.
+     */
+    @Async
+    public void asyncService() {
+        SecurityLogger.log("Async service is called.");
     }
 
     /**
