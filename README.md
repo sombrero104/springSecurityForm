@@ -259,14 +259,14 @@ Spring-Session과 연동하여 세션 클러스터를 구현할 수 있다.<br/>
 ### HeaderWriterFilter
 응답 헤더에 시큐리티 관련 헤더를 추가해주는 필터.<br/>
 
-XContentTypeOptionsHeaderWriter: 마임 타입 스니핑 방어.<br/>
+- XContentTypeOptionsHeaderWriter: 마임 타입 스니핑 방어.<br/>
     => 'X-Content-Type-Options: nosniff'를 헤더에 추가해줌.<br/>
-XXssProtectionHeaderWriter: 브라우저에 내장된 XSS 필터 적용.<br/>
+- XXssProtectionHeaderWriter: 브라우저에 내장된 XSS 필터 적용.<br/>
     => 'X-XSS-Protection: 1; mode=block'을 헤더에 추가해줌.<br/>
-CacheControllHeadersWriter: 캐시 히스토리 취약점 방어. 동적인 페이지가 캐시되지 않도록.<br/>
+- CacheControllHeadersWriter: 캐시 히스토리 취약점 방어. 동적인 페이지가 캐시되지 않도록.<br/>
     => 'Cache-Control: no-cache, no-store, max-age=0, must-revalidate'를 헤더에 추가해줌.<br/>
-HstsHeaderWriter: HTTPS로만 소통하도록 강제.<br/>
-XFrameOptionsHeaderWriter: clickjacking 방어.<br/>
+- HstsHeaderWriter: HTTPS로만 소통하도록 강제.<br/>
+- XFrameOptionsHeaderWriter: clickjacking 방어.<br/>
     => 'X-Frame-Options: DENY'를 헤더에 추가해줌.<br/>
 
 
