@@ -154,20 +154,20 @@ CSRF(Cross-Site Request Forgery) 어택 방지 필터.<br/>
             양방향간 인증하는 사용하지 않고 타도메인이라도 특정 도메인이 일치하면 허용하는 CORS를 사용하는 경우.<br/>
 - 세션에 저장된 CSRF 토큰이 없을 경우 새로 생성하여 저장.
 <pre>
-    protected void doFilterInternal() {
-        ...
-        CsrfToken csrfToken = this.tokenRepository.loadToken(request);
-            // HttpSessionCsrfTokenRepository의 loadToken()
-        boolean missingToken = csrfToken == null;
-        if (missingToken) {
-            csrfToken = this.tokenRepository.generateToken(request);
-            this.tokenRepository.saveToken(csrfToken, request, response);
-        }
-        CsrfToken csrfToken = this.tokenRepository.loadToken(request);
-        request.setAttribute(CsrfToken.class.getName(), csrfToken);
-        request.setAttribute(csrfToken.getParameterName(), csrfToken);
-        ...
+protected void doFilterInternal() {
+    ...
+    CsrfToken csrfToken = this.tokenRepository.loadToken(request);
+        // HttpSessionCsrfTokenRepository의 loadToken()
+    boolean missingToken = csrfToken == null;
+    if (missingToken) {
+        csrfToken = this.tokenRepository.generateToken(request);
+        this.tokenRepository.saveToken(csrfToken, request, response);
     }
+    CsrfToken csrfToken = this.tokenRepository.loadToken(request);
+    request.setAttribute(CsrfToken.class.getName(), csrfToken);
+    request.setAttribute(csrfToken.getParameterName(), csrfToken);
+    ...
+}
 </pre>
 위와 같이 서버에서 생성하여 보내온 토큰 값을 form의 hidden값으로 가지고 있음.
 <pre>
@@ -196,7 +196,7 @@ protected void doFilterInternal() {
 <pre>
 ----------------------------------------------------
 csrfToken = {DefaultCsrfToken@11450}                 // 서버에서 생성하여 보낸 토큰 값
- token = "a50533f3-ac15-40c4-9503-3fc4b9e932f0"
+    token = "a50533f3-ac15-40c4-9503-3fc4b9e932f0"
 ----------------------------------------------------
 actualToken = "a50533f3-ac15-40c4-9503-3fc4b9e932f0" // 클라이언트가 hidden form으로 보낸 토큰 값
 ----------------------------------------------------
