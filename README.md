@@ -171,7 +171,7 @@ CSRF(Cross-Site Request Forgery) 어택 방지 필터.<br/>
 </pre>
 위와 같이 서버에서 생성하여 보내온 토큰 값을 form의 hidden값으로 가지고 있음.
 <pre>
-    <input name="_csrf" type="hidden" value="5e06dffd-56a1-40e4-aad1-5dc4b4677719">
+    &lgt;input name="_csrf" type="hidden" value="5e06dffd-56a1-40e4-aad1-5dc4b4677719"&rgt;
 </pre>
 폼 전송 후 서버에서 생성하여 보낸 토큰 값(csrfToken)과 폼에서 클라이언트가 보낸 토큰 값(actualToken)이 일치하는지 확인함.
 <pre>
@@ -195,10 +195,10 @@ CSRF(Cross-Site Request Forgery) 어택 방지 필터.<br/>
 디버깅 결과:
 <pre>
 ----------------------------------------------------
-csrfToken = {DefaultCsrfToken@11450}
+csrfToken = {DefaultCsrfToken@11450}                 // 서버에서 생성하여 보낸 토큰 값
  token = "a50533f3-ac15-40c4-9503-3fc4b9e932f0"
 ----------------------------------------------------
-actualToken = "a50533f3-ac15-40c4-9503-3fc4b9e932f0"
+actualToken = "a50533f3-ac15-40c4-9503-3fc4b9e932f0" // 클라이언트가 hidden form으로 보낸 토큰 값
 ----------------------------------------------------
 </pre>
 
