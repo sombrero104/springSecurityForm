@@ -223,6 +223,9 @@ AuthenticationManager(ProviderManager)는 여러 AuthenticationProvider를 사�
 그 중에 DaoAuthenticationProvider는 UserDetailsService를 사용하여 UserDetails 정보를 가져와 사용자가 입력한 password와 비교한다.<br/>
 
 #### 7. DefaultLoginPageGeneratingFilter
+기본 로그인 폼 페이지를 생성해주는 필터.<br/>
+GET /login 요청을 처리하는 필터.<br/>
+
 #### 8. DefaultLogoutPageGeneratingFilter
 #### 9. BasicAuthenticationFilter
 #### 10. RequestCacheAwareFtiler
