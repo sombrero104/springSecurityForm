@@ -152,6 +152,7 @@ CSRF(Cross-Site Request Forgery) 어택 방지 필터.<br/>
 - CSRF 어택: 인증된 유저의 계정을 사용해 악의적인 변경 요청을 만들어 보내는 기법.<br/>
             다른 도메인간에 요청을 허용하는 경우. API가 다른 도메인에서도 요청 가능한 경우.<br/>
             양방향간 인증하는 사용하지 않고 타도메인이라도 특정 도메인이 일치하면 허용하는 CORS를 사용하는 경우.<br/>
+- CSRF 토큰을 저장하는 부분.
 <pre>
     protected void doFilterInternal() {
         ...
@@ -159,6 +160,25 @@ CSRF(Cross-Site Request Forgery) 어택 방지 필터.<br/>
         request.setAttribute(CsrfToken.class.getName(), csrfToken);
         request.setAttribute(csrfToken.getParameterName(), csrfToken);
         ...
+    }
+</pre>
+위와 같이 서버에서 생성하여 보내온 토큰 값을 form의 hidden값으로 가지고 있음.
+<pre>
+    <input name="_csrf" type="hidden" value="5e06dffd-56a1-40e4-aad1-5dc4b4677719">
+</pre>
+폼 전송 후 서버에서 보낸 토큰 값과 폼에서 클라이언트가 보낸 토큰 값이 일치하는지 확인함.
+<pre>
+    protected void doFilterInternal() {
+        ...
+        String actualToken = request.getHeader(csrfToken.getHeaderName());
+        if (actualToken == null) {
+            actualToken = request.getParameter(csrfToken.getParameterName());
+        }
+        if (!csrfToken.getToken().equals(actualToken)) {
+            // MissingCsrfTokenException 혹은 InvalidCsrfTokenException 발생.
+        } else {
+            filterChain.doFilter(request, response);
+        }
     }
 </pre>
 
