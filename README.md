@@ -247,5 +247,13 @@ PostProcess: SecurityContext를 정리(clean up)한다.<br/>
 (SampleController.java 파일의 asyncHandler(), asyncService() 참조.)<br/>
 
 
+### SecurityContextPersistenceFilter
+여러 요청간에 SecurityContext를 공유할 수 있 기능을 제공.<br/>
+SecurityContextRepository(SecurityContextRepository의 구현체인 HttpSessionSecurityContextRepository)를 사용해서<br/>
+기존의 세션에서 SecurityContext를 읽어오거나 초기화 한다. (SecurityContext가 없을 경우 새로 생성하는 역할도 함.)<br/>
+이미 인증된 SecurityContext가 있을 경우 새로 만들지 않아도 되므로 모든 인증 필터보다 먼저 실행되도록 선언되어 있음.<br/>
+기본으로 사용하는 전략은 HTTP Session을 사용한다.<br/>
+Spring-Session과 연동하여 세션 클러스터를 구현할 수 있다.<br/>
+
 
 <br/><br/>
