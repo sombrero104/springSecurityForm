@@ -149,13 +149,19 @@ Spring-Session과 연동하여 세션 클러스터를 구현할 수 있다.<br/>
 CSRF(Cross-Site Request Forgery) 어택 방지 필터.<br/>
 의도한 사용자만 리소스를 변경할 수 있도록 허용하는 필터. CSRF 토큰을 사용하여 방지.<br/>
 서버쪽에서 만들어준 토큰이 있는지 확인.<br/>
-- CSRF 어택: 인증된 유저의 계정을 사용해 악의적인 변경 요청을 만들어 보내는 기법.<br/>
+** CSRF 어택: 인증된 유저의 계정을 사용해 악의적인 변경 요청을 만들어 보내는 기법.<br/>
             다른 도메인간에 요청을 허용하는 경우. API가 다른 도메인에서도 요청 가능한 경우.<br/>
             양방향간 인증하는 사용하지 않고 타도메인이라도 특정 도메인이 일치하면 허용하는 CORS를 사용하는 경우.<br/>
-- CSRF 토큰을 저장하는 부분.
+- 세션에 저장된 CSRF 토큰이 없을 경우 새로 생성하여 저장.
 <pre>
     protected void doFilterInternal() {
         ...
+        CsrfToken csrfToken = this.tokenRepository.loadToken(request); // HttpSessionCsrfTokenRepository의 loadToken()
+        boolean missingToken = csrfToken == null;
+        if (missingToken) {
+            csrfToken = this.tokenRepository.generateToken(request);
+            this.tokenRepository.saveToken(csrfToken, request, response);
+        }
         CsrfToken csrfToken = this.tokenRepository.loadToken(request);
         request.setAttribute(CsrfToken.class.getName(), csrfToken);
         request.setAttribute(csrfToken.getParameterName(), csrfToken);
