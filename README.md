@@ -91,7 +91,7 @@ AbstractAuthenticationProcessingFilter의 doFilter()가 실행<br/>
 -> result가 있을 경우 크리덴셜을 삭제하고 result를 리턴.<br/>
 -> AbstractAuthenticationProcessingFilter의 doFilter()로 돌아와서 authResult에 저장.<br/>
 -> AbstractAuthenticationProcessingFilter의 successfulAuthentication() 실행하여<br/>
-   SecurityContextHolder가 SecurityContext에 authResult를 저장.<br/><br/>
+   SecurityContextHolder가 SecurityContext에 authResult를 저장.<br/><br/><br/><br/>
 
 ## Spring Security Filter<br/>
 
