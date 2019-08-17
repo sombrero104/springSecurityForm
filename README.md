@@ -206,16 +206,18 @@ actualToken = "a50533f3-ac15-40c4-9503-3fc4b9e932f0" // 클라이언트가 hidde
 </pre>
 
 #### 5. LogoutFilter
-여러 LogoutHandler를 사용하여 로그아웃 시 필요한 처리를 하며 이후에는 LogoutSuccessHandler를 사용하여 로그아웃 후처리를 한다.
-(로그아웃 버튼을 실제로 눌렀을때 수행되는 작업을 LogoutFilter가 처리.)
-LogoutFilter.java -> doFilter() -> if(requiresLogout(request, response)) ...
-    => 실제로 로그아웃 처리가 필요한 경우(로그아웃 POST 요청이 날아온 경우)에만 로그아웃 작업 수행.
-- CompositeLogoutHandler(여러개의 LogoutHandler를 포함. 기본적으로는 아래 두개의 핸들러만 사용.)
-    CsrfLogoutHandler, SecurityContextLogoutHandler
-- LogoutSuccessHandler
-    SimplUrlLogoutSuccessHandler
+여러 LogoutHandler를 사용하여 로그아웃 시 필요한 처리를 하며 이후에는 LogoutSuccessHandler를 사용하여 로그아웃 후처리를 한다.<br/>
+(로그아웃 버튼을 실제로 눌렀을때 수행되는 작업을 LogoutFilter가 처리.)<br/>
+LogoutFilter.java -> doFilter() -> if(requiresLogout(request, response)) ...<br/>
+    => 실제로 로그아웃 처리가 필요한 경우(로그아웃 POST 요청이 날아온 경우)에만 로그아웃 작업 수행.<br/>
+- CompositeLogoutHandler(여러개의 LogoutHandler를 포함. 기본적으로는 아래 두개의 핸들러만 사용.)<br/>
+    CsrfLogoutHandler, SecurityContextLogoutHandler<br/>
+- LogoutSuccessHandler<br/>
+    SimplUrlLogoutSuccessHandler<br/>
 
 #### 6. UsernamePasswordAuthenticationFilter
+폼 로그인을 처리하는 인증 필터.<br/>
+
 #### 7. DefaultLoginPageGeneratingFilter
 #### 8. DefaultLogoutPageGeneratingFilter
 #### 9. BasicAuthenticationFilter
