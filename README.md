@@ -244,7 +244,7 @@ public class FormLoginSecurityConfig extends WebSecurityConfigurerAdapter {
 PreProcess: SecurityContext를 설정한다.<br/>
 Callable: 비록 다른 쓰레드지만 그 안에서는 동일한 SecurityContext를 참조할 수 있다.<br/>
 PostProcess: SecurityContext를 정리(clean up)한다.<br/>
-(SampleController.java 파일의 asyncHandler() 참조.)<br/>
+(SampleController.java 파일의 asyncHandler(), asyncService() 참조.)<br/>
 
 
 
