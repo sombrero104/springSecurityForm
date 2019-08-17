@@ -115,7 +115,7 @@ AbstractAuthenticationProcessingFilter의 doFilter()가 실행<br/>
 또 FilterChainProxy는 DelegatingFilterProxy에 의해서 호출.
 WebSecurityConfigurerAdapter를 상속하여 커스텀한 SecurityConfig가 사용할 필터 체인 목록을 만드는 역할을 함.<br/><br/>
 
-### 1. WebAsyncManagerIntegrationFilter
+#### 1. WebAsyncManagerIntegrationFilter
 스프링 MVC의 Async 기능(핸들러에서 Callable을 리턴할 수 있는 기능)을 사용할 때에도 SecurityContext를 공유하도록 도와주는 필터.<br/>
 PreProcess: SecurityContext를 설정한다.<br/>
 Callable: 비록 다른 쓰레드지만 그 안에서는 동일한 SecurityContext를 참조할 수 있다.<br/>
@@ -123,7 +123,7 @@ PostProcess: SecurityContext를 정리(clean up)한다.<br/>
 (SampleController.java 파일의 asyncHandler(), asyncService() 참조.)<br/>
 
 
-### 2. SecurityContextPersistenceFilter
+#### 2. SecurityContextPersistenceFilter
 여러 요청간에 SecurityContext를 공유할 수 있 기능을 제공.<br/>
 SecurityContextRepository(SecurityContextRepository의 구현체인 HttpSessionSecurityContextRepository)를 사용해서<br/>
 기존의 세션에서 SecurityContext를 읽어오거나 초기화 한다. (SecurityContext가 없을 경우 새로 생성하는 역할도 함.)<br/>
@@ -132,7 +132,7 @@ SecurityContextRepository(SecurityContextRepository의 구현체인 HttpSessionS
 Spring-Session과 연동하여 세션 클러스터를 구현할 수 있다.<br/>
 
 
-### 3. HeaderWriterFilter
+#### 3. HeaderWriterFilter
 응답 헤더에 시큐리티 관련 헤더를 추가해주는 필터.<br/>
 
 - XContentTypeOptionsHeaderWriter: 마임 타입 스니핑 방어.<br/>
@@ -145,19 +145,19 @@ Spring-Session과 연동하여 세션 클러스터를 구현할 수 있다.<br/>
 - XFrameOptionsHeaderWriter: clickjacking 방어.<br/>
     => 'X-Frame-Options: DENY'를 헤더에 추가해줌.<br/>
 
-### 4. CsrfFilter
-### 5. LogoutFilter
-### 6. UsernamePasswordAuthenticationFilter
-### 7. DefaultLoginPageGeneratingFilter
-### 8. DefaultLogoutPageGeneratingFilter
-### 9. BasicAuthenticationFilter
-### 10. RequestCacheAwareFtiler
-### 11. SecurityContextHolderAwareReqeustFilter
-### 12. AnonymouseAuthenticationFilter
-### 13. SessionManagementFilter
-### 14. ExeptionTranslationFilter
-### 15. FilterSecurityInterceptor
-<br/>
+#### 4. CsrfFilter
+#### 5. LogoutFilter
+#### 6. UsernamePasswordAuthenticationFilter
+#### 7. DefaultLoginPageGeneratingFilter
+#### 8. DefaultLogoutPageGeneratingFilter
+#### 9. BasicAuthenticationFilter
+#### 10. RequestCacheAwareFtiler
+#### 11. SecurityContextHolderAwareReqeustFilter
+#### 12. AnonymouseAuthenticationFilter
+#### 13. SessionManagementFilter
+#### 14. ExeptionTranslationFilter
+#### 15. FilterSecurityInterceptor
+<br/><br/>
 
 #### DelegatingFilterProxy와 FilterChainProxy<br/>
 
