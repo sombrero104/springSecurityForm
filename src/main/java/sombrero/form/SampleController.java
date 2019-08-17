@@ -1,14 +1,20 @@
 package sombrero.form;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import sombrero.account.Account;
 import sombrero.account.AccountContext;
 import sombrero.account.AccountRepository;
+import sombrero.common.SecurityLogger;
 
+import javax.sound.midi.SoundbankResource;
 import java.security.Principal;
+import java.util.concurrent.Callable;
 
 @Controller
 public class SampleController {
@@ -78,6 +84,51 @@ public class SampleController {
     public String user(Model model, Principal principal) {
         model.addAttribute("message", "Hello user, " + principal.getName());
         return "user";
+    }
+
+    /**
+     * WebAsyncManagerIntegrationFilter
+     * (+) Callable 사용해보기.
+     *
+     * 출력 결과:
+     * ---------------------------------------------------
+     * # MVC
+     * # thread.getName(): http-nio-8080-exec-6
+     * # principal: org.springframework.security.core.userdetails.User@59957021: Username: sombrero; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Granted Authorities: ROLE_USER
+     * ---------------------------------------------------
+     * ---------------------------------------------------
+     * # Callable
+     * # thread.getName(): task-1
+     * # principal: org.springframework.security.core.userdetails.User@59957021: Username: sombrero; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Granted Authorities: ROLE_USER
+     * ---------------------------------------------------
+     *
+     * 스레드는 다르지만 동일한 Principal을 사용하는 것을 확인할 수 있다.
+     * 같은 Principal을 사용하도록 해주는 필터가 WebAsyncManagerIntegrationFilter 이다.
+     *
+     * 스프링 MVC의 Async 기능(핸들러에서 Callable을 리턴할 수 있는 기능)을 사용할 때에도 SecurityContext를 공유하도록 도와주는 필터.
+     * PreProcess: SecurityContext를 설정한다.
+     * Callable: 비록 다른 쓰레드지만 그 안에서는 동일한 SecurityContext를 참조할 수 있다.
+     * PostProcess: SecurityContext를 정리(clean up)한다.
+     */
+    @GetMapping("/asyncHandler")
+    @ResponseBody
+    public Callable<String> asyncHandler() {
+        SecurityLogger.log("MVC");
+
+        // 1. 리턴하는 곳까지의 스레드는 톰캣의 nio 스레드.
+        return () -> { // 2. Callable로 별도의 스레드가 새로 생성됨.
+            SecurityLogger.log("Callable");
+            return "Acync Handler";
+        };
+
+        // 위는 람다 버전. (같은 내용.)
+        /*return new Callable<String>() { // 1. 리턴하는 곳까지의 스레드는 톰캣의 nio 스레드.
+            @Override
+            public String call() throws Exception { // 2. Callable로 별도의 스레드가 새로 생성됨.
+                SecurityLogger.log("Callable");
+                return "Acync Handler";
+            }
+        };*/
     }
 
 }
