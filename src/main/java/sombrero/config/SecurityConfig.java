@@ -96,6 +96,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
          *  => 현재 스레드내에서 하위 스레드를 생성할 경우, SecurityContextHolder 공유가 가능하도록 설정.
          */
         SecurityContextHolder.setStrategyName(SecurityContextHolder.MODE_INHERITABLETHREADLOCAL);
+
+        /**
+         * 로그아웃 커스텀
+         */
+        http.logout()
+                .logoutUrl("/logout") // 로그아웃 할 수 있는 페이지. 다른 경로로 로그아웃 페이지를 커스텀할 수 있음.
+                .logoutSuccessUrl("/"); // 로그아웃 후 이동할 페이지.
+                // .deleteCookies("쿠키 이름") // 로그아웃 할 때 쿠키 삭제.
     }
 
     /**
