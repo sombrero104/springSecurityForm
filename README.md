@@ -216,7 +216,7 @@ LogoutFilter.java -> doFilter() -> if(requiresLogout(request, response)) ...<br/
     SimplUrlLogoutSuccessHandler<br/>
 
 #### 6. UsernamePasswordAuthenticationFilter
-폼 로그인을 처리하는 인증 필터.<br/>
+폼 로그인을 처리하는 인증 필터. (로그인 시 submit 버튼을 누르면 수행되는 인증 작업을 처리.)<br/>
 사용자가 폼에 입력한 username과 password로 Authentication을 만들고 AuthenticationManager를 사용하여 인증을 시도한다.<br/>
 AuthenticationManager(ProviderManager)는 여러 AuthenticationProvider를 사용하여 인증을 시도하는데,<br/>
 그 중에 DaoAuthenticationProvider는 UserDetailsService를 사용하여 UserDetails 정보를 가져와 사용자가 입력한 password와 비교한다.<br/>

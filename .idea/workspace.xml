@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="194f3d26-a6f3-4b88-8487-1b1b962c39a6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -20,8 +21,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="217" column="44" lean-forward="true" selection-start-line="217" selection-start-column="44" selection-end-line="217" selection-end-column="44" />
+            <state relative-caret-position="308">
+              <caret line="218" column="53" selection-start-line="218" selection-start-column="53" selection-end-line="218" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -124,7 +125,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="446" />
+    <option name="x" value="737" />
     <option name="y" value="23" />
     <option name="width" value="1327" />
     <option name="height" value="967" />
@@ -447,7 +448,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="698" y="23" width="1327" height="967" extended-state="0" />
+    <frame x="316" y="23" width="1327" height="967" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23346303" />
@@ -991,8 +992,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="217" column="44" lean-forward="true" selection-start-line="217" selection-start-column="44" selection-end-line="217" selection-end-column="44" />
+        <state relative-caret-position="308">
+          <caret line="218" column="53" selection-start-line="218" selection-start-column="53" selection-end-line="218" selection-end-column="53" />
         </state>
       </provider>
     </entry>
