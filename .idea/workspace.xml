@@ -56,8 +56,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="200" column="47" lean-forward="true" selection-start-line="200" selection-start-column="47" selection-end-line="200" selection-end-column="47" />
+            <state relative-caret-position="27">
+              <caret line="173" column="78" lean-forward="true" selection-start-line="173" selection-start-column="78" selection-end-line="173" selection-end-column="78" />
             </state>
           </provider>
         </entry>
@@ -482,6 +482,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="412" y="23" width="1327" height="967" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23346303" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -1026,8 +1027,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="200" column="47" lean-forward="true" selection-start-line="200" selection-start-column="47" selection-end-line="200" selection-end-column="47" />
+        <state relative-caret-position="27">
+          <caret line="173" column="78" lean-forward="true" selection-start-line="173" selection-start-column="78" selection-end-line="173" selection-end-column="78" />
         </state>
       </provider>
     </entry>
