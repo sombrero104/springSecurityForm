@@ -169,7 +169,9 @@ protected void doFilterInternal() {
     ...
 }
 </pre>
-- 위와 같이 서버에서 생성하여 보내온 토큰 값을 form의 hidden값으로 가지고 있음.
+- 위와 같이 서버에서 생성하여 보내온 토큰 값을 form의 hidden값으로 가지고 있음.<br/>
+    (Thymeleaf 2.1 이상 버전을 사용하거나 jsp를 사용할 경우, form 태그를 사용하면 hidden으로 CSRF 토큰을 자동으로 넣어줌.<br/>
+        GET 요청에는 토큰 값을 확인 안함. POST 요청만 토큰 확인.)<br/>
 <pre>
 ❮input name="_csrf" type="hidden" value="5e06dffd-56a1-40e4-aad1-5dc4b4677719"❯
 </pre>
