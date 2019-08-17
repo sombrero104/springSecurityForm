@@ -166,20 +166,33 @@ CSRF(Cross-Site Request Forgery) 어택 방지 필터.<br/>
 <pre>
     <input name="_csrf" type="hidden" value="5e06dffd-56a1-40e4-aad1-5dc4b4677719">
 </pre>
-폼 전송 후 서버에서 보낸 토큰 값과 폼에서 클라이언트가 보낸 토큰 값이 일치하는지 확인함.
+폼 전송 후 서버에서 생성하여 보낸 토큰 값(csrfToken)과 폼에서 클라이언트가 보낸 토큰 값(actualToken)이 일치하는지 확인함.
 <pre>
     protected void doFilterInternal() {
         ...
-        String actualToken = request.getHeader(csrfToken.getHeaderName());
-        if (actualToken == null) {
-            actualToken = request.getParameter(csrfToken.getParameterName());
-        }
-        if (!csrfToken.getToken().equals(actualToken)) {
-            // MissingCsrfTokenException 혹은 InvalidCsrfTokenException 발생.
-        } else {
+        if (!this.requireCsrfProtectionMatcher.matches(request)) {
             filterChain.doFilter(request, response);
+        } else {
+            String actualToken = request.getHeader(csrfToken.getHeaderName());
+            if (actualToken == null) {
+                actualToken = request.getParameter(csrfToken.getParameterName());
+            }
+            if (!csrfToken.getToken().equals(actualToken)) {
+                // MissingCsrfTokenException 혹은 InvalidCsrfTokenException 발생.
+            } else {
+                filterChain.doFilter(request, response);
+            }
         }
     }
+</pre>
+디버깅 결과:
+<pre>
+----------------------------------------------------
+csrfToken = {DefaultCsrfToken@11450}
+ token = "a50533f3-ac15-40c4-9503-3fc4b9e932f0"
+----------------------------------------------------
+actualToken = "a50533f3-ac15-40c4-9503-3fc4b9e932f0"
+----------------------------------------------------
 </pre>
 
 #### 5. LogoutFilter
