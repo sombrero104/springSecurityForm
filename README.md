@@ -156,7 +156,8 @@ CSRF(Cross-Site Request Forgery) 어택 방지 필터.<br/>
 <pre>
     protected void doFilterInternal() {
         ...
-        CsrfToken csrfToken = this.tokenRepository.loadToken(request); // HttpSessionCsrfTokenRepository의 loadToken()
+        CsrfToken csrfToken = this.tokenRepository.loadToken(request);
+            // HttpSessionCsrfTokenRepository의 loadToken()
         boolean missingToken = csrfToken == null;
         if (missingToken) {
             csrfToken = this.tokenRepository.generateToken(request);
