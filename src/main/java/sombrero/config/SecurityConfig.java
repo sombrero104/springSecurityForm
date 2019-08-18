@@ -85,7 +85,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                 // .accessDecisionManager(accessDecisionManager()) // 1. AccessDecisionManager를 커스터마이징하는 방법.
                 .expressionHandler(securityExpressionHandler()); // 2. SecurityExpressionHandler를 커스터마이징하는 방법.
-        http.formLogin();
+        // http.formLogin();
+        /*http.formLogin()
+                .usernameParameter("my-username")
+                .passwordParameter("my-password");*/ // form 로그인페이지 파라미터 변경. 자동으로 생성되는 login페이지도 자동으로 바뀜.
+        /**
+         * 커스텀한 로그인페이지를 만들 경우.
+         * DefaultLoginPageGeneratingFilter와 DefaultLogoutPageGeneratingFilter를 타지 않음.
+         */
+        http.formLogin().loginPage("/signin");
+
         http.httpBasic();
         // 필터 15개
 
