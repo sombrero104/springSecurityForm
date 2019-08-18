@@ -225,8 +225,12 @@ AuthenticationManager(ProviderManager)는 여러 AuthenticationProvider를 사�
 #### 7. DefaultLoginPageGeneratingFilter
 기본 로그인 폼 페이지를 생성해주는 필터.<br/>
 GET /login 요청을 처리하는 필터.<br/>
+커스텀한 로그인 페이지를 만들 경우 SecurityConfig의 '커스텀한 로그인페이지를 만들 경우.' 라인 참조.<br/>
 
 #### 8. DefaultLogoutPageGeneratingFilter
+기본 로그아웃 폼 페이지를 생성해주는 필터.<br/>
+GET /logout 요청을 처리하는 필터.<br/>
+
 #### 9. BasicAuthenticationFilter
 #### 10. RequestCacheAwareFtiler
 #### 11. SecurityContextHolderAwareReqeustFilter

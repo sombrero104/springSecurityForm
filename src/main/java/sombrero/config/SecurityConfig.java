@@ -91,9 +91,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .passwordParameter("my-password");*/ // form 로그인페이지 파라미터 변경. 자동으로 생성되는 login페이지도 자동으로 바뀜.
         /**
          * 커스텀한 로그인페이지를 만들 경우.
-         * DefaultLoginPageGeneratingFilter와 DefaultLogoutPageGeneratingFilter를 타지 않음.
+         * DefaultLoginPageGeneratingFilter와 DefaultLogoutPageGeneratingFilter를 타지 않음. 직접 만들어야함.
+         * GET 요청일 경우에는 form 로그인 페이지를, POST 요청일 경우에는 UsernamePasswordAuthenticationFitler 처리를 탐.
+         * GET 요청일 경우에 보여주는 form 로그인 페이지만 커스텀.
          */
-        http.formLogin().loginPage("/signin");
+        http.formLogin().loginPage("/login").permitAll();
 
         http.httpBasic();
         // 필터 15개
