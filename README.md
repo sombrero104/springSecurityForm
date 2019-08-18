@@ -238,8 +238,12 @@ SecurityConfig의 configure(HttpSecurity http)에 'http.httpBasic();' 설정을 
 https://tools.ietf.org/html/rfc7617<br/>
 요청 헤더에 username와 password를 실어 보내면 브라우저 또는 서버가 헤더에 있는 그 값을 읽어서 인증하는 방식.<br/>
 예) Authorization: Basic QWxhZGRpbjpPcGVuU2VzYW1l (username:password를 Base64로 인코딩한 것.)<br/>
+한번 요청해서 인증이 되어도 그 다음 요청에서는 무효함. 요청마다 인증 필요.(remember me 기능을 추가하면 가능할지도 모르지만 필요 없음.)<br/>
 보통, 브라우저 기반 요청이 클라이언트의 요청을 처리할 때 자주 사용.<br/>
 보안에 취약하기 때문에 반드시 HTTPS를 사용할 것을 권장.<br/>
+** 테스트:<br/>
+curl의 아래 -u 옵션을 사용하면 헤더에 실어서 요청함.<br/>
+curl -u sombrero:123 http://localhost:8080<br/>
 
 #### 10. RequestCacheAwareFtiler
 #### 11. SecurityContextHolderAwareReqeustFilter
