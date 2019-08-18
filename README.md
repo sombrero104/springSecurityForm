@@ -236,7 +236,7 @@ HTTP Basic 인증을 지원하는 필터.<br/>
 SecurityConfig의 configure(HttpSecurity http)에 'http.httpBasic();' 설정을 추가하면 이 필터를 타게 됨.<br/>
 ** Basic 인증이란?<br/>
 https://tools.ietf.org/html/rfc7617<br/>
-요청 헤더에 username와 password를 실어 보내면 브라우저 또는 서버가 그 값을 읽어서 인증하는 방식.<br/>
+요청 헤더에 username와 password를 실어 보내면 브라우저 또는 서버가 헤더에 있는 그 값을 읽어서 인증하는 방식.<br/>
 예) Authorization: Basic QWxhZGRpbjpPcGVuU2VzYW1l (username:password를 Base64로 인코딩한 것.)<br/>
 보통, 브라우저 기반 요청이 클라이언트의 요청을 처리할 때 자주 사용.<br/>
 보안에 취약하기 때문에 반드시 HTTPS를 사용할 것을 권장.<br/>
