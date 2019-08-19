@@ -20,7 +20,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler;
 import org.springframework.security.web.access.expression.WebExpressionVoter;
+import org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter;
 import sombrero.account.AccountService;
+import sombrero.common.LoggingFilter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -87,6 +89,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        /**
+         * 커스텀 Filter 만들기. 설정 추가.
+         */
+        // http.addFilterAfter() // 특정 Filter 뒤에 커스텀 Filter를 추가할 경우.
+        // http.addFilterBefore() // 특정 Filter 앞에 커스텀 Filter를 추가할 경우.
+        // http.addFilterAt() // 특정 Filter 위치에 커스텀 Filter를 추가할 경우.
+        http.addFilterBefore(new LoggingFilter(), WebAsyncManagerIntegrationFilter.class);
+        // 1번 필터인 WebAsyncManagerIntegrationFilter 필터 앞에 진행.
+        // LoggingFilter에서 추가한 성능측정(로그인 시 얼마나 걸렸는지)이 모든 필터가 진행되는 끝까지 측정됨.
+
         http.authorizeRequests()
                 // .antMatchers("/").permitAll()
                 // .regexMatchers("/").permitAll()
