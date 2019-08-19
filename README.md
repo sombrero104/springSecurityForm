@@ -298,25 +298,25 @@ SessionManagementFilter가 제공하는 기능들<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;세션 변조: https://www.owasp.org/index.php/Session_fixation<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;서블릿 컨테이너에 따라 세션 방지 전략이 달라짐.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;** 톰캣 버전에 따라 서블릿 버전 확인하기<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://tomcat.apache.org/whichversion.html<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://tomcat.apache.org/whichversion.html<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- none<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- newSession<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- migrateSession (서블릿 3.0- 버전 컨테이너 사용시 기본값)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=> http.sessionManagement().sessionFixation().migrateSession() 설정.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=> 인증 후 새로운 세션을 만들고 기존 세션에 있던 몇몇 세션 애트리뷰트 값들을 복사해옴.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=> http.sessionManagement().sessionFixation().migrateSession() 설정.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=> 인증 후 새로운 세션을 만들고 기존 세션에 있던 몇몇 세션 애트리뷰트 값들을 복사해옴.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- changeSessionId (서블릿 3.1+ 이상 버전에서만 지원. 컨테이너 사용시 기본값)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=> http.sessionManagement().sessionFixation().changeSessionId() 설정.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=> 인증 후 새로운 세션을 만듬. 쿠키의 세션 Id를 바꿔서 보냄.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=> http.sessionManagement().sessionFixation().changeSessionId() 설정.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=> 인증 후 새로운 세션을 만듬. 쿠키의 세션 Id를 바꿔서 보냄.<br/>
 (2) 유효하지 않은 세션을 리다이렉트 시킬 URL 설정.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http.sessionManagement().sessionFixation().changeSessionId().invalidSessionUrl("/login");<br/>
 (3) 동시성 제어: maximumSessions<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;추가 로그인을 막을지 여부 설정. (기본값, false, 다른 브라우저에서 또 로그인 가능.)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;동시에 하나의 계정만 로그인 가능하도록 설정할 경우.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=> http.sessionManagement().sessionFixation().changeSessionId().maximumSessions(1);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=> http.sessionManagement().sessionFixation().changeSessionId().maximumSessions(1);<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(+) 다른 곳에서 로그인 시 현재 세션이 만료가 되었을 떄 보내고 싶은 Url 설정: .expiredUrl("/login");<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(+) 다른 곳에서 로그인 시 새로운 세션이 로그인 못하게 하고 싶을 때: .maxSessionsPreventsLogin(true);<br/>
 (4) 세션 생성 전략: sessionCreationPolicy<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=> http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=> http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED);<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- IF_REQUIRED (기본값): 필요하면 만듬.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- NEVER: 스프링 시큐리티에선 만들지 않음. 하지만 기존에 이미 세션이 있다면 가져다 씀. (대부분 이미 존재하는 세션을 가져다 쓰게 됨.)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- STATELESS: 세션을 쓰지 않을 경우. 세션이 있더라도 쓰지 않음. stateless한 restAPI를 만 경우 사용.<br/>
