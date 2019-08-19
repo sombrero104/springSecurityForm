@@ -274,7 +274,7 @@ SecurityContextHolderAwareRequestWrapper is extended to provide the following ad
 (1) HttpServletRequest#authenticate(HttpServletResponse) - Allows the user to
     determine if they are authenticated and if not send the user to the login page.
     See #setAuthenticationEntryPoint(AuthenticationEntryPoint).
-(2) HttpServletRequest#login(String, String)} - Allows the user to authenticate
+(2) HttpServletRequest#login(String, String) - Allows the user to authenticate
     using the AuthenticationManager.
     See #setAuthenticationManager(AuthenticationManager).
 (3) HttpServletRequest#logout() - Allows the user to logout using the
@@ -286,6 +286,10 @@ SecurityContextHolderAwareRequestWrapper is extended to provide the following ad
 </pre>
 
 #### 12. AnonymouseAuthenticationFilter
+익명 인증 필터.<br/>
+현재 SecurityContext에 Authentication이 null이면 '익명 Authentication'을 만들어 넣어주고,<br/>
+null이 아니면 아무일도 하지 않는다.<br/>
+
 #### 13. SessionManagementFilter
 #### 14. ExeptionTranslationFilter
 #### 15. FilterSecurityInterceptor
