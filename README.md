@@ -344,7 +344,7 @@ ExceptionTranslationFilter -> FilterSecurityInterceptor(AccessDecisionManager, A
 
 #### 15. FilterSecurityInterceptor
 HTTP 리소스 시큐리티 처리를 담당하는 필터. AccessDecisionManager를 사용하여 인가를 처리한다.<br/>
-- HTTP 리소스 시큐리티 설정.<br/>
+- HTTP 리소스 시큐리티 설정. SecurityConfig.java 파일 참조.<br/>
 <pre>
 http.authorizeRequests()
     .mvcMatchers("/", "/info", "/account/**", "/signup").permitAll()
