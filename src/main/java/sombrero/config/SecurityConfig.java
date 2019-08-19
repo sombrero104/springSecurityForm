@@ -6,6 +6,7 @@ import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.security.access.AccessDecisionManager;
 import org.springframework.security.access.AccessDecisionVoter;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.access.expression.SecurityExpressionHandler;
 import org.springframework.security.access.hierarchicalroles.RoleHierarchyImpl;
 import org.springframework.security.access.vote.AffirmativeBased;
@@ -14,9 +15,15 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler;
 import org.springframework.security.web.access.expression.WebExpressionVoter;
 
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -99,6 +106,22 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.httpBasic();
         // 필터 15개
+
+        // 403에러. Access denied 커스텀 페이지. (인증은 되어 있는데 해당 리소스에 대해 권한이 충분하지 않은 경우.)
+        // http.exceptionHandling().accessDeniedPage("/access-denied");
+        // 로그를 남기고 싶을 경우.(어느 곳에 비정상적인 접근을 하였는지 ) AccessDeniedHandler 구현하면 됨.
+        // 아래와 다르게 AccessDeniedHandler를 별도의 클래스로 만드는 것을 권장.
+        http.exceptionHandling()
+                .accessDeniedHandler(new AccessDeniedHandler() {
+                    @Override
+                    public void handle(HttpServletRequest request, HttpServletResponse response, AccessDeniedException e) throws IOException, ServletException {
+                        UserDetails principal = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+                        String username = principal.getUsername();
+                        System.out.println(username + " is denied to access " + request.getRequestURI());
+                        // 결과: sombrero is denied to access /admin
+                        response.sendRedirect("/access-denied");
+                    }
+                });
 
         /**
          * SecurityContextHolder의 전략 설정 변경.
