@@ -512,26 +512,26 @@ public class FormLoginSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 }
 </pre>
-<br/>
+<br/><br/><br/><br/>
 
 #### 기타 스프링 시큐리티와 함께 사용하면 유용한 라이브러리
 1. 타임리프 스프링 시큐리티 확장팩
 아래처럼 의존성 추가.
 <pre>
-<dependency>
-    <groupId>org.thymeleaf.extras</groupId>
-    <artifactId>thymeleaf-extras-springsecurity5</artifactId>
-</dependency>
+❮dependency❯
+    ❮<groupId❯org.thymeleaf.extras❮/groupId❯
+    ❮artifactId❯thymeleaf-extras-springsecurity5❮/artifactId❯
+❮/dependency❯
 </pre>
 위 의존성을 추가하면 html에서 Authentication과 Authorization를 참조할 수 있게 됨.
 <pre>
-<div th:if="${#authorization.expr('isAuthenticated()')}">
-    <h2 th:text="${#authentication.name}"></h2>
-    <a href="/logout" th:href="@{/logout}">Logout</a>
-</div>
-<div th:unless="${#authorization.expr('isAuthenticated()')}">
-    <a href="/login" th:href="@{/login}">Login</a>
-</div>
+❮div th:if="${#authorization.expr('isAuthenticated()')}"❯
+    ❮h2 th:text="${#authentication.name}"❯❮/h2❯
+    ❮a href="/logout" th:href="@{/logout}"❯Logout❮/a❯
+❮/div❯
+❮div th:unless="${#authorization.expr('isAuthenticated()')}"❯
+    ❮a href="/login" th:href="@{/login}"❯Login❮/a❯
+❮/div❯
 </pre>
 위 내용만 추가하면 컨트롤러에서 아래처럼 principlal이 있는지 없는지 확인하는 절차가 없어도 됨.
 <pre>
