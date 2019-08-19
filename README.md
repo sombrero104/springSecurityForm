@@ -379,6 +379,7 @@ http.rememberMe()
     SecurityContextHolderAwareRequestFilter 다음으로, AnonymousAuthenticationFilter 이전으로 실행됨.
 ** RememberMeAuthenticationFilter에선 처음으로 인증된 사용자 정보(authentication)가 있는지 확인함.
     위 테스트에서는 JSESSIONID를 삭제했기 때문에 authentication이 없음.
+    RememberMe 토큰이 있는지 확인. (rememberMeAuth = RememberMeAuthenticationToken)
 </pre>
 <br/><br/><br/><br/>
 
