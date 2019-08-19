@@ -116,6 +116,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.formLogin().loginPage("/login").permitAll();
 
         http.rememberMe()
+                // .rememberMeParameter("remember") // 로그인 페이지에서도 파라미터를 remember로 바꿔줘야 함. 기본값은 remember-me.
+                // .tokenValiditySeconds() // 쿠키를 유지하는 시간을 변경할 때 사용. 기본값은 2주.
+                // .useSecureCookie(true) // HTTS만 이 쿠키에 접근 가능하도록 함.
+                // .alwaysRemember(true) // 로그인 페이지 form에서 파라미터를 넣어주지 않더라도 기본적으로 RememberMe 기능 사용하도록 함. 기본값은 false.
                 .userDetailsService(accountService)
                 .key("remember-me");
 
