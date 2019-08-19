@@ -270,8 +270,7 @@ public void doFilter(ServletRequest request, ServletResponse response, FilterCha
 <pre>
 A Filter which populates the ServletRequest with a request
 wrapper which implements the servlet API security methods.
-SecurityContextHolderAwareRequestWrapper is extended to provide the following
-additional methods:
+SecurityContextHolderAwareRequestWrapper is extended to provide the following additional methods:
 (1) HttpServletRequest#authenticate(HttpServletResponse) - Allows the user to
     determine if they are authenticated and if not send the user to the login page.
     See #setAuthenticationEntryPoint(AuthenticationEntryPoint).
