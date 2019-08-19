@@ -375,6 +375,8 @@ http.rememberMe()
             하나는 JSESSIONID, 하나는 설정한 'remember-me' 쿠키. (username과 언제까지 유효한지에 대한 정보가 들어있음.)
             이번엔 JSESSIONID를 삭제하고 다시 접근해도 로그인을 요구하지 않음. (JSESSIONID가 또다시 새로 생김.)
 ** EditThisCookie 크롬 플러그인으로 현재 웹사이트의 쿠키 확인 가능.
+** RememberMeAuthenticationFilter를 사용하게 되면
+    SecurityContextHolderAwareRequestFilter 다음으로, AnonymousAuthenticationFilter 이전으로 실행됨.
 </pre>
 <br/><br/><br/><br/>
 
