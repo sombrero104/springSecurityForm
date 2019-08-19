@@ -353,6 +353,10 @@ http.authorizeRequests()
     .anyRequest().authenticated()
     .expressionHandler(expressionHandler());
 </pre>
+<br/><br/>
+#### ** RememberMeAuthenticationFilter
+세션이 사라지거나 만료가 되더라도 쿠키 또는 DB를 사용하여 저장된 토큰 기반으로 인증을 지원하는 필터.
+
 <br/><br/><br/><br/>
 
 #### DelegatingFilterProxy와 FilterChainProxy<br/>
