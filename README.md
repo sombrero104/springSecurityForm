@@ -343,6 +343,16 @@ ExceptionTranslationFilter -> FilterSecurityInterceptor(AccessDecisionManager, A
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=> 403 페이지 커스텀 및 로그 남기기(AccessDeniedHandler 구현) -> SecurityConfig.java 파일 참조.
 
 #### 15. FilterSecurityInterceptor
+HTTP 리소스 시큐리티 처리를 담당하는 필터. AccessDecisionManager를 사용하여 인가를 처리한다.<br/>
+- HTTP 리소스 시큐리티 설정.<br/>
+<pre>
+http.authorizeRequests()
+    .mvcMatchers("/", "/info", "/account/**", "/signup").permitAll()
+    .mvcMatchers("/admin").hasAuthority("ROLE_ADMIN")
+    .mvcMatchers("/user").hasRole("USER")
+    .anyRequest().authenticated()
+    .expressionHandler(expressionHandler());
+</pre>
 <br/><br/><br/><br/>
 
 #### DelegatingFilterProxy와 FilterChainProxy<br/>

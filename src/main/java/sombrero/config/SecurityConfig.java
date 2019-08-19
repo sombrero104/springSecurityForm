@@ -86,10 +86,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
+                // .antMatchers("/").permitAll()
+                // .regexMatchers("/").permitAll()
                 .mvcMatchers("/", "/info", "/account/**", "/signup").permitAll()
                 .mvcMatchers("/admin").hasRole("ADMIN")
+                // .mvcMatchers("/user").hasAuthority("ROLE_USER") // hasAuthority() 사용할 경우 'ROLE_' 붙여줘야 함.
                 .mvcMatchers("/user").hasRole("USER")
-                .anyRequest().authenticated()
+                // .anyRequest().anonymous() // 익명 사용자에게만 허용할 경우.
+                // .anyRequest().not().anonymous() // 익명 사용자가 아닌 경우 다 허용.
+                // .anyRequest().rememberMe() // Remember me 기능으로 인증을 한 사용자의 경우 접근 허용.
+                // .anyRequest().fullyAuthenticated() // Remember me로 인증이 된 사용자의 경우 중요한 url에서는 다시 로그인을 요구.
+                                                    // (예, 장바구니 히스토리를 보거나 주문할 때. 그전까지는 Remember me로 동작을 하다가 중요한 url에서 다시 로그인을 요구.)
+                // .anyRequest().denyAll() // 아무것도 허용하지 경우.
+                .anyRequest().authenticated() // 인증이 되기만 하면 접근 허용.
                 // .accessDecisionManager(accessDecisionManager()) // 1. AccessDecisionManager를 커스터마이징하는 방법.
                 .expressionHandler(securityExpressionHandler()); // 2. SecurityExpressionHandler를 커스터마이징하는 방법.
         // http.formLogin();
