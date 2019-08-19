@@ -356,13 +356,21 @@ http.authorizeRequests()
 <br/><br/>
 #### ** RememberMeAuthenticationFilter
 세션이 사라지거나 만료가 되더라도 쿠키 또는 DB를 사용하여 저장된 토큰 기반으로 인증을 지원하는 필터.<br/>
+(예, 로그인 기억하기 체크박스. 직접 로그아웃을 하기 전까지는 몇일 지나도 로그인이 된 상태로 유지.
+세션이 만료가 되어도 상관없음. 세션보다 더 수명이 긴 토큰 값이 쿠키로 남아있거나 서버의 DB에 저장되어 있음.)
 - RememberMe 설정<br/>
 <pre>
 http.rememberMe()
         .userDetailsService(accountService)
-        .key("remember-me-sample");
+        .key("remember-me");
 </pre>
-
+<pre>
+** 테스트: RememberMe 설정을 안할 경우, 로그인하고 JSESSIONID 쿠키값 지운 후 다시 접근하면 다시 로그인해야 함.
+         RememberMe 설정을 사용할 경우, 로그인하고 쿠키를 확인해 보면 쿠키가 두개인 것을 확인할 수 있음.
+            하나는 JSESSIONID, 하나는 설정한 'remember-me' 쿠키. (username과 언제까지 유효한지에 대한 정보가 들어있음.)
+            이번엔 JSESSIONID를 삭제하고 다시 접근해도 로그인을 요구하지 않음.
+** EditThisCookie 크롬 플러그인으로 현재 웹사이트의 쿠키 확인 가능.
+</pre>
 <br/><br/><br/><br/>
 
 #### DelegatingFilterProxy와 FilterChainProxy<br/>

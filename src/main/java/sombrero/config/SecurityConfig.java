@@ -1,5 +1,6 @@
 package sombrero.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;
@@ -19,6 +20,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler;
 import org.springframework.security.web.access.expression.WebExpressionVoter;
+import sombrero.account.AccountService;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -32,8 +34,8 @@ import java.util.List;
 @Order(Ordered.LOWEST_PRECEDENCE - 50)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    /*@Autowired
-    AccountService accountService;*/
+    @Autowired
+    AccountService accountService;
 
     /**
      * 권한 커스터마이징 방법
@@ -112,6 +114,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
          * GET 요청일 경우에 보여주는 form 로그인 페이지만 커스텀.
          */
         http.formLogin().loginPage("/login").permitAll();
+
+        http.rememberMe()
+                .userDetailsService(accountService)
+                .key("remember-me");
 
         http.httpBasic();
         // 필터 15개
