@@ -328,18 +328,18 @@ SessionManagementFilter가 제공하는 기능들<br/>
 #### 14. ExceptionTranslationFilter
 인증, 인가 에러 처리를 담당하는 필터.<br/>
 ExceptionTranslationFilter -> FilterSecurityInterceptor(AccessDecisionManager, AffirmativeBased를 사용해서 인가 처리.)<br/>
-    => 반드 FilterSecurityInterceptor 보다 이전에 처리되어야 함.<br/>
-       FilterSecurityInterceptor가 ExceptionTranslationFilter를 감싸고 실행되어야 함.<br/>
-       FilterSecurityInterceptor가 AccessDecisionManager, AffirmativeBased를 사용해서<br/>
-       권한에 대한 인가 처리를 하는데 두가지 에러가 발생할 수 있음.<br/>
-       ExceptionTranslationFilter는 아래 예외에 따라서 각각 다른 처리를 함.<br/>
-       (1) 인증 자체가 안된 경우 -> AuthenticationException<br/>
-           => ExceptionTranslationFilter가 AuthenticationEntryPoint를 사용해서 예외를 처리.<br/>
-           => AuthenticationEntryPoint가 인증이 가능한 로그인 페이지로 보냄.<br/>
-       (2) 인증은 되어 있는데 해당 리소스에 대해 권한이 충분하지 않은 경우 -> AccessDeniedException<br/>
-           => ExceptionTranslationFilter가 AccessDeniedHandler를 사용해서 예외를 처리.<br/>
-           => 기본 처리는 403 에러 메세지를 보여주는 것.<br/>
-           => 403 페이지 커스텀 -> http.exceptionHandling().accessDeniedPage("/access-denied");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=> 반드시 FilterSecurityInterceptor 보다 이전에 처리되어야 함.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FilterSecurityInterceptor가 ExceptionTranslationFilter를 감싸고 실행되어야 함.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FilterSecurityInterceptor가 AccessDecisionManager, AffirmativeBased를 사용해서<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;권한에 대한 인가 처리를 하는데 두가지 에러가 발생할 수 있음.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ExceptionTranslationFilter는 아래 예외에 따라서 각각 다른 처리를 함.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1) 인증 자체가 안된 경우 -> AuthenticationException<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=> ExceptionTranslationFilter가 AuthenticationEntryPoint를 사용해서 예외를 처리.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=> AuthenticationEntryPoint가 인증이 가능한 로그인 페이지로 보냄.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2) 인증은 되어 있는데 해당 리소스에 대해 권한이 충분하지 않은 경우 -> AccessDeniedException<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=> ExceptionTranslationFilter가 AccessDeniedHandler를 사용해서 예외를 처리.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=> 기본 처리는 403 에러 메세지를 보여주는 것.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=> 403 페이지 커스텀 -> http.exceptionHandling().accessDeniedPage("/access-denied");<br/>
 
 #### 15. FilterSecurityInterceptor
 <br/><br/><br/><br/>
