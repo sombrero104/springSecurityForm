@@ -287,8 +287,9 @@ SecurityContextHolderAwareRequestWrapper is extended to provide the following ad
 
 #### 12. AnonymouseAuthenticationFilter
 익명 인증 필터.<br/>
-현재 SecurityContext에 Authentication이 null이면 '익명 Authentication'을 만들어 넣어주고,<br/>
+현재 SecurityContext에 Authentication이 null이면 '익명 Authentication'(AnonymousAuthenticationToken)을 만들어 넣어주고,<br/>
 null이 아니면 아무일도 하지 않는다.<br/>
+** Null Object Patter: Null을 대변하는 객체를 만들어두는 패턴.<br/>
 
 #### 13. SessionManagementFilter
 #### 14. ExeptionTranslationFilter
