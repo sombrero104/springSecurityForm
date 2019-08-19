@@ -295,7 +295,6 @@ null이 아니면 아무일도 하지 않는다.<br/>
 #### 13. SessionManagementFilter
 SessionManagementFilter가 제공하는 기능들<br/>
 (1) 세션 변조 방지 전략 설정: sessionFixation<br/>
-<p>
     세션 변조: https://www.owasp.org/index.php/Session_fixation<br/>
     서블릿 컨테이너에 따라 세션 방지 전략이 달라짐.<br/>
         ** 톰캣 버전에 따라 서블릿 버전 확인하기<br/>
@@ -308,7 +307,6 @@ SessionManagementFilter가 제공하는 기능들<br/>
     - changeSessionId (서블릿 3.1+ 이상 버전에서만 지원. 컨테이너 사용시 기본값)<br/>
         => http.sessionManagement().sessionFixation().changeSessionId() 설정.<br/>
         => 인증 후 새로운 세션을 만듬. 쿠키의 세션 Id를 바꿔서 보냄.<br/>
-</p>
 (2) 유효하지 않은 세션을 리다이렉트 시킬 URL 설정.<br/>
     http.sessionManagement().sessionFixation().changeSessionId().invalidSessionUrl("/login");<br/>
 (3) 동시성 제어: maximumSessions<br/>
