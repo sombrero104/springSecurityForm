@@ -268,8 +268,8 @@ public void doFilter(ServletRequest request, ServletResponse response, FilterCha
 서블릿3의 시큐리티 관련 메소드들을 스프링 시큐리티 기반으로 구현을 해주는 역할.<br/>
 아래와 같은 서블릿3 메소드들..<br/>
 <pre>
-A Filter which populates the ServletRequest with a request
-wrapper which implements the servlet API security methods.
+A Filter which populates the ServletRequest with a request wrapper
+which implements the servlet API security methods.
 SecurityContextHolderAwareRequestWrapper is extended to provide the following additional methods:
 (1) HttpServletRequest#authenticate(HttpServletResponse) - Allows the user to
     determine if they are authenticated and if not send the user to the login page.
