@@ -373,7 +373,7 @@ http.rememberMe()
 ** 테스트: RememberMe 설정을 안할 경우, 로그인하고 JSESSIONID 쿠키값 지운 후 다시 접근하면 다시 로그인해야 함.
          RememberMe 설정을 사용할 경우, 로그인하고 쿠키를 확인해 보면 쿠키가 두개인 것을 확인할 수 있음.
             하나는 JSESSIONID, 하나는 설정한 'remember-me' 쿠키. (username과 언제까지 유효한지에 대한 정보가 들어있음.)
-            이번엔 JSESSIONID를 삭제하고 다시 접근해도 로그인을 요구하지 않음.
+            이번엔 JSESSIONID를 삭제하고 다시 접근해도 로그인을 요구하지 않음. (JSESSIONID가 또다시 새로 생김.)
 ** EditThisCookie 크롬 플러그인으로 현재 웹사이트의 쿠키 확인 가능.
 </pre>
 <br/><br/><br/><br/>
