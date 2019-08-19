@@ -273,17 +273,17 @@ wrapper which implements the servlet API security methods.
 SecurityContextHolderAwareRequestWrapper is extended to provide the following
 additional methods:
 (1) HttpServletRequest#authenticate(HttpServletResponse) - Allows the user to
-determine if they are authenticated and if not send the user to the login page.
-See #setAuthenticationEntryPoint(AuthenticationEntryPoint).
+    determine if they are authenticated and if not send the user to the login page.
+    See #setAuthenticationEntryPoint(AuthenticationEntryPoint).
 (2) HttpServletRequest#login(String, String)} - Allows the user to authenticate
-using the AuthenticationManager.
-See #setAuthenticationManager(AuthenticationManager).
+    using the AuthenticationManager.
+    See #setAuthenticationManager(AuthenticationManager).
 (3) HttpServletRequest#logout() - Allows the user to logout using the
-LogoutHandlers configured in Spring Security.
-See #setLogoutHandlers(List).
+    LogoutHandlers configured in Spring Security.
+    See #setLogoutHandlers(List).
 (4) AsyncContext#start(Runnable) - Automatically copy the SecurityContext from
-the SecurityContextHolder found on the Thread that
-invoked AsyncContext#start(Runnable) to the Thread that processes the Runnable.
+    the SecurityContextHolder found on the Thread that
+    invoked AsyncContext#start(Runnable) to the Thread that processes the Runnable.
 </pre>
 
 #### 12. AnonymouseAuthenticationFilter
