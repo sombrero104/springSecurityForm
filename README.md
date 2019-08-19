@@ -249,6 +249,7 @@ curl -u sombrero:123 http://localhost:8080<br/>
 현재 요청과 관련 있는 캐시된 요청이 있는지 찾아서 적용하는 필터.<br/>
 캐시된 요청이 없다면, 현재 요청 처리.<br/>
 캐시된 요청이 있다면, 해당 캐시된 요청 처리.<br/>
+캐시를 세션에 저장하고 가져다 씀.<br/>
 <pre>
 public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
         throws IOException, ServletException {
@@ -292,7 +293,34 @@ null이 아니면 아무일도 하지 않는다.<br/>
 ** Null Object Pattern: Null을 대변하는 객체를 만들어두는 패턴.<br/>
 
 #### 13. SessionManagementFilter
-세션변조방지 세션
+SessionManagementFilter가 제공하는 기능들<br/>
+(1) 세션 변조 방지 전략 설정: sessionFixation<br/>
+    세션 변조: https://www.owasp.org/index.php/Session_fixation<br/>
+    서블릿 컨테이너에 따라 세션 방지 전략이 달라짐.<br/>
+        ** 톰캣 버전에 따라 서블릿 버전 확인하기<br/>
+            http://tomcat.apache.org/whichversion.html<br/>
+    - none<br/>
+    - newSession<br/>
+    - migrateSession (서블릿 3.0- 버전 컨테이너 사용시 기본값)<br/>
+        => http.sessionManagement().sessionFixation().migrateSession() 설정.<br/>
+        => 인증 후 새로운 세션을 만들고 기존 세션에 있던 몇몇 세션 애트리뷰트 값들을 복사해옴.<br/>
+    - changeSessionId (서블릿 3.1+ 이상 버전에서만 지원. 컨테이너 사용시 기본값)<br/>
+        => http.sessionManagement().sessionFixation().changeSessionId() 설정.<br/>
+        => 인증 후 새로운 세션을 만듬. 쿠키의 세션 Id를 바꿔서 보냄.<br/>
+(2) 유효하지 않은 세션을 리다이렉트 시킬 URL 설정.<br/>
+    http.sessionManagement().sessionFixation().changeSessionId().invalidSessionUrl("/login");<br/>
+(3) 동시성 제어: maximumSessions<br/>
+    추가 로그인을 막을지 여부 설정. (기본값, false, 다른 브라우저에서 또 로그인 가능.)<br/>
+    동시에 하나의 계정만 로그인 가능하도록 설정할 경우.<br/>
+        => http.sessionManagement().sessionFixation().changeSessionId().maximumSessions(1);<br/>
+           (+) 다른 곳에서 로그인 시 현재 세션이 만료가 되었을 떄 보내고 싶은 Url 설정: .expiredUrl("/login");<br/>
+           (+) 다른 곳에서 로그인 시 새로운 세션이 로그인 못하게 하고 싶을 때: .maxSessionsPreventsLogin(true);<br/>
+(4) 세션 생성 전략: sessionCreationPolicy<br/>
+    => http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED);<br/>
+    - IF_REQUIRED (기본값): 필요하면 만듬.<br/>
+    - NEVER: 스프링 시큐리티에선 만들지 않음. 하지만 기존에 이미 세션이 있다면 가져다 씀. (대부분 이미 존재하는 세션을 가져다 쓰게 됨.)<br/>
+    - STATELESS: 세션을 쓰지 않을 경우. 세션이 있더라도 쓰지 않음. stateless한 restAPI를 만 경우 사용.<br/>
+    - ALWAYS<br/>
 
 #### 14. ExeptionTranslationFilter
 #### 15. FilterSecurityInterceptor
