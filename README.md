@@ -246,6 +246,19 @@ curl의 아래 -u 옵션을 사용하면 헤더에 실어서 요청함.<br/>
 curl -u sombrero:123 http://localhost:8080<br/>
 
 #### 10. RequestCacheAwareFtiler
+현재 요청과 관련 있는 캐시된 요청이 있는지 찾아서 적용하는 필터.<br/>
+캐시된 요청이 없다면, 현재 요청 처리.<br/>
+캐시된 요청이 있다면, 해당 캐시된 요청 처리.<br/>
+<pre>
+public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+    HttpServletRequest wrappedSavedRequest = this.requestCache.getMatchingRequest((HttpServletRequest)request, (HttpServletResponse)response);
+    chain.doFilter((ServletRequest)(wrappedSavedRequest == null ? request : wrappedSavedRequest), response);
+}
+</pre>
+예) dashboard에 접근 시 로그인을 해야 하므로 login 페이지로 이동하게 됨.<br/>
+이전 dashboard에 대한 요청을 wrappedSavedRequest에 저장해 놓음.<br/>
+로그인 후 원래 처리해야 했던 요청인 dashboard 요청을 다시 처리.<br/>
+
 #### 11. SecurityContextHolderAwareReqeustFilter
 #### 12. AnonymouseAuthenticationFilter
 #### 13. SessionManagementFilter
