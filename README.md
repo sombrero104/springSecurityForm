@@ -384,6 +384,7 @@ http.rememberMe()
 </pre>
 <br/><br/>
 #### ** 커스텀 Filter 추가하기.
+일반적인 서블릿 필터를 만들거나 GenericFilterBean을 상속받아서 만듬. (GenericFilterBean 또한 서블릿 javax.servlet.Filter를 상속 받음.)
 
 <br/><br/><br/><br/>
 
