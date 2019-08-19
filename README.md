@@ -267,10 +267,24 @@ public void doFilter(ServletRequest request, ServletResponse response, FilterCha
 시큐리티 관련 서블릿 API를 구현해주는 필터. 서블릿3 스펙을 지원하는 역할.<br/>
 서블릿3의 시큐리티 관련 메소드들을 스프링 시큐리티 기반으로 구현을 해주는 역할.<br/>
 아래와 같은 서블릿3 메소드들..<br/>
-- HttpServletRequest#authenticate(HttpServletResponse)<br/>
-- HttpServletRequest#login(String, String)<br/>
-- HttpServletRequest#logout()<br/>
-- AsyncContext#start(Runnable)<br/>
+<pre>
+A Filter which populates the ServletRequest with a request
+wrapper which implements the servlet API security methods.
+SecurityContextHolderAwareRequestWrapper is extended to provide the following
+additional methods:
+(1) HttpServletRequest#authenticate(HttpServletResponse) - Allows the user to
+determine if they are authenticated and if not send the user to the login page.
+See #setAuthenticationEntryPoint(AuthenticationEntryPoint).
+(2) HttpServletRequest#login(String, String)} - Allows the user to authenticate
+using the AuthenticationManager.
+See #setAuthenticationManager(AuthenticationManager).
+(3) HttpServletRequest#logout() - Allows the user to logout using the
+LogoutHandlers configured in Spring Security.
+See #setLogoutHandlers(List).
+(4) AsyncContext#start(Runnable) - Automatically copy the SecurityContext from
+the SecurityContextHolder found on the Thread that
+invoked AsyncContext#start(Runnable) to the Thread that processes the Runnable.
+</pre>
 
 #### 12. AnonymouseAuthenticationFilter
 #### 13. SessionManagementFilter
