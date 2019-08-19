@@ -387,7 +387,7 @@ http.rememberMe()
 일반적인 서블릿 필터를 만들거나 GenericFilterBean을 상속받아서 만듬.<br/>
 (GenericFilterBean 또한 서블릿 javax.servlet.Filter를 상속 받음. 스프링 친화적.<br/>
 서블릿 필터를 상속받으면 init(), doFilter(), destroy() 모두 구현해야 하지만 GenericFilterBean을 상속받으면 doFilter()만 구현하면 됨.)<br/>
-
+LoggingFilter.java 파일 참조.
 <br/><br/><br/><br/>
 
 #### DelegatingFilterProxy와 FilterChainProxy<br/>
