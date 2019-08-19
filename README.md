@@ -377,6 +377,8 @@ http.rememberMe()
 ** EditThisCookie 크롬 플러그인으로 현재 웹사이트의 쿠키 확인 가능.
 ** RememberMeAuthenticationFilter를 사용하게 되면
     SecurityContextHolderAwareRequestFilter 다음으로, AnonymousAuthenticationFilter 이전으로 실행됨.
+** RememberMeAuthenticationFilter에선 처음으로 인증된 사용자 정보(authentication)가 있는지 확인함.
+    위 테스트에서는 JSESSIONID를 삭제했기 때문에 authentication이 없음.
 </pre>
 <br/><br/><br/><br/>
 

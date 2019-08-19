@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="194f3d26-a6f3-4b88-8487-1b1b962c39a6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -21,17 +20,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="372" column="75" lean-forward="true" selection-start-line="372" selection-start-column="75" selection-end-line="372" selection-end-column="75" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="69" />
+            <state relative-caret-position="354">
+              <caret line="378" column="50" selection-start-line="378" selection-start-column="50" selection-end-line="378" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -139,7 +129,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="529" />
+    <option name="x" value="426" />
     <option name="y" value="23" />
     <option name="width" value="1151" />
     <option name="height" value="967" />
@@ -1014,8 +1004,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="372" column="75" lean-forward="true" selection-start-line="372" selection-start-column="75" selection-end-line="372" selection-end-column="75" />
+        <state relative-caret-position="354">
+          <caret line="378" column="50" selection-start-line="378" selection-start-column="50" selection-end-line="378" selection-end-column="50" />
         </state>
       </provider>
     </entry>
