@@ -535,7 +535,7 @@ public class FormLoginSecurityConfig extends WebSecurityConfigurerAdapter {
 </pre>
 위 내용만 추가하면 컨트롤러에서 아래처럼 principlal이 있는지 없는지 확인하는 절차가 없어도 됨.
 <pre>
-if(principal ==  null) {
+if(principal == null) {
     model.addAttribute("message", "Hello Spring Security");
 } else {
     model.addAttribute("message", "Hello, " + principal.getName());
