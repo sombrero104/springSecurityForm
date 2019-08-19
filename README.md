@@ -321,9 +321,9 @@ SessionManagementFilter가 제공하는 기능들<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- NEVER: 스프링 시큐리티에선 만들지 않음. 하지만 기존에 이미 세션이 있다면 가져다 씀. (대부분 이미 존재하는 세션을 가져다 쓰게 됨.)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- STATELESS: 세션을 쓰지 않을 경우. 세션이 있더라도 쓰지 않음. stateless한 restAPI를 만 경우 사용.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ALWAYS<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;** 여러개의 서버간에 세션 공유 관리
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;스프링 세션 클러스터를 쉽고 편리하게 구성할 수 있는 Spring session 사용.
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://spring.io/projects/spring-session
+** 여러개의 서버간에 세션 공유 관리<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;스프링 세션 클러스터를 쉽고 편리하게 구성할 수 있는 Spring session 사용.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://spring.io/projects/spring-session<br/>
 
 #### 14. ExeptionTranslationFilter
 #### 15. FilterSecurityInterceptor
