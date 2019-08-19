@@ -253,7 +253,8 @@ curl -u sombrero:123 http://localhost:8080<br/>
 public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
         throws IOException, ServletException {
     HttpServletRequest wrappedSavedRequest
-        = this.requestCache.getMatchingRequest((HttpServletRequest)request, (HttpServletResponse)response);
+        = this.requestCache.getMatchingRequest((HttpServletRequest)request
+            , (HttpServletResponse)response);
     chain.doFilter((ServletRequest)(wrappedSavedRequest == null ?
         request : wrappedSavedRequest), response);
 }
