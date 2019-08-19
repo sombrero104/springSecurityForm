@@ -340,6 +340,7 @@ ExceptionTranslationFilter -> FilterSecurityInterceptor(AccessDecisionManager, A
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=> ExceptionTranslationFilter가 AccessDeniedHandler를 사용해서 예외를 처리.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=> 기본 처리는 403 에러 메세지를 보여주는 것.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=> 403 페이지 커스텀 -> http.exceptionHandling().accessDeniedPage("/access-denied");<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=> 403 페이지 커스텀 및 로그 남기기(AccessDeniedHandler 구현) -> SecurityConfig.java 파일 참조.
 
 #### 15. FilterSecurityInterceptor
 <br/><br/><br/><br/>
