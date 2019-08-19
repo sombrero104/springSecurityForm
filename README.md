@@ -292,7 +292,7 @@ null이 아니면 아무일도 하지 않는다.<br/>
 ** Null Object Pattern: Null을 대변하는 객체를 만들어두는 패턴.<br/>
 
 #### 13. SessionManagementFilter
-세션변조
+세션변조방지
 
 #### 14. ExeptionTranslationFilter
 #### 15. FilterSecurityInterceptor
