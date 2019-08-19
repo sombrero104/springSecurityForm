@@ -264,6 +264,14 @@ public void doFilter(ServletRequest request, ServletResponse response, FilterCha
 로그인 후 원래 처리해야 했던 요청인 dashboard 요청을 다시 처리.<br/>
 
 #### 11. SecurityContextHolderAwareReqeustFilter
+시큐리티 관련 서블릿 API를 구현해주는 필터. 서블릿3 스펙을 지원하는 역할.<br/>
+서블릿3의 시큐리티 관련 메소드들을 스프링 시큐리티 기반으로 구현을 해주는 역할.<br/>
+아래와 같은 서블릿3 메소드들..<br/>
+- HttpServletRequest#authenticate(HttpServletResponse)<br/>
+- HttpServletRequest#login(String, String)<br/>
+- HttpServletRequest#logout()<br/>
+- AsyncContext#start(Runnable)<br/>
+
 #### 12. AnonymouseAuthenticationFilter
 #### 13. SessionManagementFilter
 #### 14. ExeptionTranslationFilter

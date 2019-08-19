@@ -20,8 +20,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="252" column="16" selection-start-line="252" selection-start-column="16" selection-end-line="252" selection-end-column="16" />
+            <state relative-caret-position="186">
+              <caret line="266" column="26" selection-start-line="266" selection-start-column="26" selection-end-line="266" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -136,7 +136,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="529" />
+    <option name="x" value="894" />
     <option name="y" value="23" />
     <option name="width" value="1151" />
     <option name="height" value="967" />
@@ -459,7 +459,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="529" y="23" width="1151" height="967" extended-state="0" />
+    <frame x="894" y="23" width="1151" height="967" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11091073" />
@@ -1013,8 +1013,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="252" column="16" selection-start-line="252" selection-start-column="16" selection-end-line="252" selection-end-column="16" />
+        <state relative-caret-position="186">
+          <caret line="266" column="26" selection-start-line="266" selection-start-column="26" selection-end-line="266" selection-end-column="26" />
         </state>
       </provider>
     </entry>
