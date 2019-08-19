@@ -515,11 +515,11 @@ public class FormLoginSecurityConfig extends WebSecurityConfigurerAdapter {
 <br/><br/><br/><br/>
 
 #### 기타 스프링 시큐리티와 함께 사용하면 유용한 라이브러리
-1. 타임리프 스프링 시큐리티 확장팩
-아래처럼 의존성 추가.
+1. 타임리프 스프링 시큐리티 확장팩<br/>
+아래처럼 의존성 추가.<br/>
 <pre>
 ❮dependency❯
-    ❮<groupId❯org.thymeleaf.extras❮/groupId❯
+    ❮groupId❯org.thymeleaf.extras❮/groupId❯
     ❮artifactId❯thymeleaf-extras-springsecurity5❮/artifactId❯
 ❮/dependency❯
 </pre>
