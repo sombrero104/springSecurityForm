@@ -2,9 +2,16 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>index</title>
+    <title>Index</title>
 </head>
 <body>
-    <h1 th:text="${message}">index default message</h1>
+    <h1 th:text="${message}">Index default message</h1>
+    <div th:if="${#authorization.expression('isAuthenticated()')}">
+        <h2 th:text="${#authentication.name}">Name</h2>
+        <a href="/logout" th:href="@{/logout}">Logout</a>
+    </div>
+    <div th:unless="${#authorization.expression('isAuthenticated()')}">
+        <a href="/login" th:href="@{/login}">Login</a>
+    </div>
 </body>
 </html>
