@@ -523,6 +523,15 @@ public class FormLoginSecurityConfig extends WebSecurityConfigurerAdapter {
     <artifactId>thymeleaf-extras-springsecurity5</artifactId>
 </dependency>
 </pre>
-
+위 의존성을 추가하면 html에서 Authentication과 Authorization를 참조할 수 있게 됨.
+<pre>
+<div th:if="${#authorization.expr('isAuthenticated()')}">
+    <h2 th:text="${#authentication.name}"></h2>
+    <a href="/logout" th:href="@{/logout}">Logout</a>
+</div>
+<div th:unless="${#authorization.expr('isAuthenticated()')}">
+    <a href="/login" th:href="@{/login}">Login</a>
+</div>
+</pre>
 
 <br/><br/>
