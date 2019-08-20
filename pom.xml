@@ -30,9 +30,21 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
+
+        <!-- Thymeleaf Extras -->
         <dependency>
             <groupId>org.thymeleaf.extras</groupId>
             <artifactId>thymeleaf-extras-springsecurity5</artifactId>
+        </dependency>
+
+        <!-- Spring Security Data
+             버전이 자동으로 찾아지지 않을 때에는 ${spring-security.version} 명시
+             => 스프링부트 버전이 올라가면 그에 맞는 Spring Security Data 버전으로 올라감.
+        -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-data</artifactId>
+            <version>${spring-security.version}</version>
         </dependency>
 
         <dependency>
