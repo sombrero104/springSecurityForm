@@ -613,7 +613,7 @@ List❮Book❯ findCurrentUserBooks();
     ❮td❯❮span th:text="${book.title}"❯Title❮/span❯❮/td❯
 ❮/tr❯
 </pre>
-Book.java 파일, BookRepository.java 파일, DefaultDataGenerator.java 파일, SampleController.java의 user(), user.html 파일 참조.<br/>
+Book.java, BookRepository.java, DefaultDataGenerator.java, SampleController.java의 user(), user.html 참조.<br/>
 
 
 <br/><br/>
