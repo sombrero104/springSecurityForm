@@ -572,7 +572,7 @@ java.security.Principal을 사용하지 않고,
 UserDetails 타입인
 Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 를 본인 도메인이 제공하는(본인 도메인에서 사용자를 나타내는) 타입(Account)으로 사용하고 싶을 때.
-Account에 접근할 수 있도록 커스텀한 User를 생성. (UserDeails 타입과 Account 타입의 어댑터 역할)
+Account에 접근할 수 있도록 커스텀한 User를 생성. (UserDeails 타입과 Account 타입의 어댑터 역할.)
 (1) 스프링 시큐리티가 제공하는 User를 상속받는 UserAccount.java 생성.
 (2) AccountService.java의 loadUserByUsername() 리턴 부분을
      return new UserAccount(account); 로 변경.
