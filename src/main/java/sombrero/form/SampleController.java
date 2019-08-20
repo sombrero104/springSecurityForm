@@ -12,6 +12,7 @@ import sombrero.account.Account;
 import sombrero.account.AccountContext;
 import sombrero.account.AccountRepository;
 import sombrero.account.UserAccount;
+import sombrero.common.CurrentUser;
 import sombrero.common.SecurityLogger;
 
 import javax.sound.midi.SoundbankResource;
@@ -33,11 +34,26 @@ public class SampleController {
      * (인덱스 페이지는 permitAll()로 설정했기 때문에 principal이 없어도 접근 가능. NullPointerException이 발생하지 않음.)
      */
     @GetMapping("/")
+    /**
+     * principal 인자로 가져오기
+     * (1) java.security.Principal을 인자로 가져오는 방법.
+     */
     // public String index(Model model, Principal principal) {
+    /**
+     * (2) User를 상속받는 UserAccount를 만들어서 @AuthenticationPrincipal로 가져오는 방법.
+     */
     // public String index(Model model, @AuthenticationPrincipal UserAccount userAccount) {
-    public String index(Model model
-            , @AuthenticationPrincipal(expression = "#this == 'anonymousUser' ? null : account") Account account) {
-            // 현재 principal이 익명사용자(anonymousUser)가 아닌 경우에는 principal 안에 들어있는 account를 가져오겠다는 뜻.
+    /**
+     * (3) expression을 사용해서 Account를 가져오는 방법.
+     */
+    // public String index(Model model, @AuthenticationPrincipal(expression = "#this == 'anonymousUser' ? null : account") Account account) {
+    // 현재 principal이 익명사용자(anonymousUser)가 아닌 경우에는 principal 안에 들어있는 account를 가져오겠다는 뜻.
+    /**
+     * (4) 위에서 붙인 긴 애노테이션 expression을 여러곳에서 사용할 경우 너무 길기 때문에 @CurrentUser라는 커스텀 애노테이션으로 만듬.
+     *      '@AuthenticationPrincipal(expression = "#this == 'anonymousUser' ? null : account")'
+     *          => @CurrentUser
+     */
+    public String index(Model model, @CurrentUser Account account) {
 
         /**
          * 'public String index(Model model, Principal principal) {'
