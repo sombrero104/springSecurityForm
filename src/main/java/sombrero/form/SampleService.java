@@ -36,8 +36,8 @@ public class SampleService {
      *  -> Authentication 제공.
      */
     // @Secured("ROLE_USER")
-    // @RolesAllowed("ROLE_USER")
-    @PreAuthorize("hasRole('USER')")
+    @RolesAllowed("ROLE_USER")
+    // @PreAuthorize("hasRole('USER')")
     public void dashboard() {
 
         /**

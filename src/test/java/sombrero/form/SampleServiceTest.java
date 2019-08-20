@@ -47,7 +47,7 @@ public class SampleServiceTest {
          * 사용자 추가.
          */
         Account account = new Account();
-        account.setRole("USER");
+        account.setRole("ADMIN");
         account.setUsername("sombrero");
         account.setPassword("123");
         accountService.createNew(account);
