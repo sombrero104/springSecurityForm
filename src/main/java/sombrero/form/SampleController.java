@@ -32,6 +32,13 @@ public class SampleController {
      */
     @GetMapping("/")
     public String index(Model model, Principal principal) {
+        /**
+         * 여기에서 인자로 받는 principal은 java.security.Principal.
+         *
+         * 참고로
+         * Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+         * 의 principal과는 다름.
+         */
         if(principal == null) {
             model.addAttribute("message", "Hello Spring Security");
         } else {
