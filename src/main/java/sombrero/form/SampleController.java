@@ -35,7 +35,10 @@ public class SampleController {
     @GetMapping("/")
     // public String index(Model model, Principal principal) {
     // public String index(Model model, @AuthenticationPrincipal UserAccount userAccount) {
-    public String index(Model model, @AuthenticationPrincipal(expression = "#this == 'anonymousUser' ? null : account") Account account) {
+    public String index(Model model
+            , @AuthenticationPrincipal(expression = "#this == 'anonymousUser' ? null : account") Account account) {
+            // 현재 principal이 익명사용자(anonymousUser)가 아닌 경우에는 principal 안에 들어있는 account를 가져오겠다는 뜻.
+
         /**
          * 'public String index(Model model, Principal principal) {'
          * 에서 인자로 받는 principal은 java.security.Principal.
