@@ -1,6 +1,7 @@
 package sombrero.form;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import sombrero.account.Account;
 import sombrero.account.AccountContext;
 import sombrero.account.AccountRepository;
+import sombrero.account.UserAccount;
 import sombrero.common.SecurityLogger;
 
 import javax.sound.midi.SoundbankResource;
@@ -31,18 +33,34 @@ public class SampleController {
      * (인덱스 페이지는 permitAll()로 설정했기 때문에 principal이 없어도 접근 가능. NullPointerException이 발생하지 않음.)
      */
     @GetMapping("/")
-    public String index(Model model, Principal principal) {
+    // public String index(Model model, Principal principal) {
+    public String index(Model model, @AuthenticationPrincipal UserAccount userAccount) {
         /**
-         * 여기에서 인자로 받는 principal은 java.security.Principal.
-         *
-         * 참고로
-         * Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-         * 의 principal과는 다름.
+         * 'public String index(Model model, Principal principal) {'
+         * 에서 인자로 받는 principal은 java.security.Principal.
+         * (참고로 Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+         *  의 principal과는 다름.)
          */
-        if(principal == null) {
+        /*if(principal == null) {
             model.addAttribute("message", "Hello Spring Security");
         } else {
             model.addAttribute("message", "Hello, " + principal.getName());
+        }*/
+
+        /**
+         * 현재 인자로 받고 있는 java.security.Principal를
+         * SecurityContextHolder 안에 있는 principal(UserDetails 객)로 사용하도록 변경하기.
+         * (1) UserAccount.java 생성.
+         * (2) AccountService.java의 loadUserByUsername() 리턴 부분을
+         *      return new UserAccount(account); 로 변경.
+         * (3) 여기에서 '@AuthenticationPrincipal UserAccount userAccount'를 인자로 받을 수 있게 됨.
+         */
+        if(userAccount == null) {
+            model.addAttribute("message", "Hello Spring Security");
+        } else {
+            //
+            // userAccount.getAccount().getUsername()
+            model.addAttribute("message", "Hello, " + userAccount.getUsername());
         }
 
         return "index";

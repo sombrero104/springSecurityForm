@@ -24,12 +24,13 @@ public class AccountService implements UserDetailsService {
             throw new UsernameNotFoundException(username);
         }
 
-        return User.builder()
+        /*return User.builder()
                 .username(account.getUsername())
                 .password(account.getPassword())
                 // .authorities("ROLE_" + account.getRole()) // authorities 사용할 경우 'ROLE_' 붙여줘야 함.
                 .roles(account.getRole())
-                .build();
+                .build();*/
+        return new UserAccount(account);
     }
 
     public Account createNew(Account account) {
