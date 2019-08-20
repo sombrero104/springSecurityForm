@@ -514,8 +514,8 @@ public class FormLoginSecurityConfig extends WebSecurityConfigurerAdapter {
 </pre>
 <br/><br/><br/><br/>
 
-## ** 스프링 시큐리티 그밖에<br/>
-#### 1. 타임리프 스프링 시큐리티 확장팩<br/>
+## ** 스프링 시큐리티 그밖에..<br/>
+### 1. 타임리프 스프링 시큐리티 확장팩<br/>
 스프링 시큐리티와 함께 사용하면 유용한 라이브러리.<br/>
 아래처럼 의존성 추가.<br/>
 <pre>
@@ -543,8 +543,8 @@ if(principal == null) {
     model.addAttribute("message", "Hello, " + principal.getName());
 }
 </pre>
-
-#### 2. 메소드 시큐리티<br/>
+<br/>
+### 2. 메소드 시큐리티<br/>
 https://docs.spring.io/spring-security/site/docs/5.1.5.RELEASE/reference/htmlsingle/#jc-method<br/>
 https://www.baeldung.com/spring-security-method-security<br/>
 웹이 아닌 데스크탑 어플리케이션에서 사용.<br/>
@@ -563,7 +563,7 @@ https://www.baeldung.com/spring-security-method-security<br/>
      => 메소드 호출 이전에 권한을 확인한다. 스프링 EL을 사용하지 못한다.
 </pre>
 <br/>
-#### 3. @AuthenticationPrincipal<br/>
+### 3. @AuthenticationPrincipal<br/>
 웹 MVC 핸들러 아규먼트로 principal(자바가 아닌 UserDetails 객체) 객체를 받을 수 있다.<br/>
 <pre>
 @AuthenticationPrincipal로 SecurityContextHolder 안에 있는 principal(UserDetails 객체) 가져오기.
