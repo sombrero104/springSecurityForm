@@ -27,7 +27,7 @@ import org.springframework.security.config.annotation.method.configuration.Globa
  * 인식하도록 하려면 GlobalMethodSecurityConfiguration를 상속받아서 accessDecisionManager()를 오버라이딩하여
  * RoleHierarchyImpl를 만들어서 AccessDecisionManager에 새 RoleHierarchyVoter를 추가하여 넣어줌.
  * 테스트: 테스트 코드인 SampleServiceTest.java에서 ADMIN 권한으로 인증하여 USER권한 메소드인 dashboard()에 접근.
- * (@Secured("ROLE_USER") 와 @RolesAllowed("ROLE_USER")은 사용이 되는데 @PreAuthorize("hasRole('USER')") 는 안됨.)
+ * (@Secured("ROLE_USER")와 @RolesAllowed("ROLE_USER")는 사용이 되는데 @PreAuthorize("hasRole('USER')")는 안됨.)
  */
 @Configuration
 @EnableGlobalMethodSecurity(securedEnabled = true, prePostEnabled = true, jsr250Enabled = true)
