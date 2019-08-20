@@ -9,6 +9,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.junit4.SpringRunner;
 import sombrero.account.Account;
 import sombrero.account.AccountService;
@@ -32,6 +33,8 @@ public class SampleServiceTest {
     AuthenticationManager authenticationManager;
 
     @Test
+    // @WithMockUser // 단지 테스트용이라면 @WithMockUser로 mock 유저를 만들 수 있음.
+                    // 현재 이 테스트를 데스크탑 애플리케이션으로 보고 메소드 시큐리티를 시뮬레이션하기 위해 인증하는 부분을 코드로 작성함.
     public void dashboard() {
         /**
          * dashboard()가 @Secured("ROLE_USER") 이기 때문에 로그인하지 않으면 아래 에러 발생.
