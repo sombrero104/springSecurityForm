@@ -291,6 +291,11 @@ SecurityContextHolderAwareRequestWrapper is extended to provide the following ad
 현재 SecurityContext에 Authentication이 null이면 '익명 Authentication'(AnonymousAuthenticationToken)을 만들어 넣어주고,<br/>
 null이 아니면 아무일도 하지 않는다.<br/>
 ** Null Object Pattern: Null을 대변하는 객체를 만들어두는 패턴.<br/>
+(익명 사용자로 접근할 경우, 디폴트로 principal 값 "anonymousUser” 문자열을 가지고 있는<br/>
+AnonymousAuthenticationFilter를 타게 되는데, 이때 이 principal 값으로 AnonymousAuthenticationToken을 생성함.)<br/>
+** 인증되지 않은 상태에서는 AnonymousAuthenticationToken을 사용하는데 이 안의 principal 값은 문자열인 'anonymousUser' 이다.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;인증 후 principal은 UserDetails 객체를 가진다.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;때문에 AnonymousAuthenticationToken 안의 principal 타입이 Object 타입으로 명시되어 있다.<br/>
 
 #### 13. SessionManagementFilter
 SessionManagementFilter가 제공하는 기능들<br/>
