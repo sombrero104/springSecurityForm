@@ -545,10 +545,9 @@ if(principal == null) {
 </pre>
 <br/>
 ### 2. 메소드 시큐리티<br/>
-
+웹이 아닌 데스크탑 어플리케이션에서 사용.<br/>
 https://docs.spring.io/spring-security/site/docs/5.1.5.RELEASE/reference/htmlsingle/#jc-method<br/>
 https://www.baeldung.com/spring-security-method-security<br/>
-웹이 아닌 데스크탑 어플리케이션에서 사용.<br/>
 데스크탑 어플리케이션이라고 생각하고 SampleService.java와 SampleServiceTest.java 파일 참조.<br/>
 세가지의 애노테이션 사용 가능.<br/>
 아래처럼 설정해줘야 각각의 애노테이션 사용 가능.<br/>
