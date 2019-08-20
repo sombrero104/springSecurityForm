@@ -34,7 +34,8 @@ public class SampleController {
      */
     @GetMapping("/")
     // public String index(Model model, Principal principal) {
-    public String index(Model model, @AuthenticationPrincipal UserAccount userAccount) {
+    // public String index(Model model, @AuthenticationPrincipal UserAccount userAccount) {
+    public String index(Model model, @AuthenticationPrincipal(expression = "#this == 'anonymousUser' ? null : account") Account account) {
         /**
          * 'public String index(Model model, Principal principal) {'
          * 에서 인자로 받는 principal은 java.security.Principal.
@@ -55,12 +56,19 @@ public class SampleController {
          *      return new UserAccount(account); 로 변경.
          * (3) 여기에서 '@AuthenticationPrincipal UserAccount userAccount'를 인자로 받을 수 있게 됨.
          */
-        if(userAccount == null) {
+        /*if(userAccount == null) {
             model.addAttribute("message", "Hello Spring Security");
         } else {
             //
             // userAccount.getAccount().getUsername()
             model.addAttribute("message", "Hello, " + userAccount.getUsername());
+        }*/
+        if(account == null) {
+            model.addAttribute("message", "Hello Spring Security");
+        } else {
+            //
+            // userAccount.getAccount().getUsername()
+            model.addAttribute("message", "Hello, " + account.getUsername());
         }
 
         return "index";
