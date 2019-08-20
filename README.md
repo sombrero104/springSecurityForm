@@ -542,7 +542,7 @@ if(principal == null) {
     model.addAttribute("message", "Hello, " + principal.getName());
 }
 </pre>
-2. 메소드 시큐리티
+2. 메소드 시큐리티<br/>
 https://docs.spring.io/spring-security/site/docs/5.1.5.RELEASE/reference/htmlsingle/#jc-method<br/>
 https://www.baeldung.com/spring-security-method-security<br/>
 웹이 아닌 데스크탑 어플리케이션에서 사용.<br/>
