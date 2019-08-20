@@ -68,8 +68,10 @@ public class SampleController {
         }*/
 
         /**
+         * java.security.Principal을 사용하지 않고,
+         * 본인 도메인이 제공하는(본인 도메인에서 사용자를 나타내는) 타입(Account)으로 사용하고 싶을 때.
          * 현재 인자로 받고 있는 java.security.Principal를
-         * SecurityContextHolder 안에 있는 principal(UserDetails 객)로 사용하도록 변경하기.
+         * SecurityContextHolder 안에 있는 principal(UserDetails 객체)로 사용하도록 변경하기.
          * (1) UserAccount.java 생성.
          * (2) AccountService.java의 loadUserByUsername() 리턴 부분을
          *      return new UserAccount(account); 로 변경.
