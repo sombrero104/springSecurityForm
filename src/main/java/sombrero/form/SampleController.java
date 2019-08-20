@@ -59,7 +59,10 @@ public class SampleController {
          * 'public String index(Model model, Principal principal) {'
          * 에서 인자로 받는 principal은 java.security.Principal.
          * (참고로 Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-         *  의 principal과는 다름.)
+         *  의 principal과는 다름.
+         *  아래처럼 가져와서 사용하는 SecurityContextHolder안에 들어있는 principal은
+         *  Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+         *  은 UserDetails 타입임.)
          */
         /*if(principal == null) {
             model.addAttribute("message", "Hello Spring Security");
