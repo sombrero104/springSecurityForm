@@ -12,6 +12,7 @@ import sombrero.account.Account;
 import sombrero.account.AccountContext;
 import sombrero.account.AccountRepository;
 import sombrero.account.UserAccount;
+import sombrero.book.BookRepository;
 import sombrero.common.CurrentUser;
 import sombrero.common.SecurityLogger;
 
@@ -27,6 +28,9 @@ public class SampleController {
 
     @Autowired
     AccountRepository accountRepository;
+
+    @Autowired
+    BookRepository bookRepository;
 
     /**
      * index 페이지
@@ -148,6 +152,7 @@ public class SampleController {
     @GetMapping("/user")
     public String user(Model model, Principal principal) {
         model.addAttribute("message", "Hello user, " + principal.getName());
+        model.addAttribute("books", bookRepository.findCurrentUserBooks());
         return "user";
     }
 

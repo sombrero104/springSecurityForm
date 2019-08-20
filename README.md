@@ -586,6 +586,36 @@ Account에 접근할 수 있도록 커스텀한 User를 생성. (UserDeails 타�
     => expression을 사용해서 Account를 가져오는 방법도 있음. SampleController.java 파일 참조.
 </pre>
 UserAccount.java 파일, AccountService.java 파일, SampleController.java 파일 참조.<br/>
+<br/>
+
+### 4. 스프링 데이터 연동<br/>
+@Query 애노테이션에서 SpEL로 principal 참조할 수 있는 기능 제공.<br/>
+스프링 시큐리티 데이터 의존성 추가.<br/>
+<pre>
+❮!-- Spring Security Data
+     버전이 자동으로 찾아지지 않을 때에는 ${spring-security.version} 명시
+     =❯ 스프링부트 버전이 올라가면 그에 맞는 Spring Security Data 버전으로 올라감.
+--❯
+❮dependency❯
+    ❮groupId❯org.springframework.security❮/groupId❯
+    ❮artifactId❯spring-security-data❮/artifactId❯
+    ❮version❯${spring-security.version}❮/version❯
+❮/dependency❯
+</pre>
+@Query에서 principal 사용하기.<br/>
+<pre>
+@Query("select b from Book b where b.author.id = ?#{principal.account.id}")
+List❮Book❯ findCurrentUserBooks();
+</pre>
+타임리프 리스트 참조.<br/>
+<pre>
+❮tr th:each="book : ${books}"❯
+    ❮td❯❮span th:text="${book.title}"❯Title❮/span❯❮/td❯
+❮/tr❯
+</pre>
+Book.java 파일, BookRepository.java 파일, DefaultDataGenerator.java 파일<br/>
+, SampleController.java의 user(), user.html 파일 참조.<br/>
+
 
 <br/><br/>
 

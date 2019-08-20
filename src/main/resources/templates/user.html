@@ -5,6 +5,9 @@
     <title>user</title>
 </head>
 <body>
-<h1 th:text="${message}">user default message</h1>
+    <h1 th:text="${message}">user default message</h1>
+    <tr th:each="book : ${books}">
+        <td><span th:text="${book.title}">Title</span></td>
+    </tr>
 </body>
 </html>
