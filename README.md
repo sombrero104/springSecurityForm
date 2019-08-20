@@ -549,6 +549,7 @@ if(principal == null) {
 아래처럼 설정해줘야 각각의 애노테이션 사용 가능.<br/>
 <pre>
 @EnableGlobalMethodSecurity(securedEnabled = true, prePostEnabled = true, jsr250Enabled = true)
+
 (1) securedEnabled: @Secured 활성화.
      => 메소드 호출 이전에 권한을 확인한다. 스프링 EL을 사용하지 못한다.
 (2) prePostEnabled: @PreAuthorized, @PostAuthorized 활성화.
