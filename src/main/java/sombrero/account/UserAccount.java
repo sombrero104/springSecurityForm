@@ -23,6 +23,7 @@ public class UserAccount extends User {
     public UserAccount(Account account) {
         super(account.getUsername(), account.getPassword()
                 , List.of(new SimpleGrantedAuthority("ROLE_" + account.getRole())));
+                // List.of()를 사용하기 위해선 자바 버전 11을 사용해야 함.
         this.account = account;
     }
 
