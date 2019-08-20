@@ -72,10 +72,11 @@ public class SampleController {
 
         /**
          * java.security.Principal을 사용하지 않고,
-         * 본인 도메인이 제공하는(본인 도메인에서 사용자를 나타내는) 타입(Account)으로 사용하고 싶을 때.
-         * 현재 인자로 받고 있는 java.security.Principal를
-         * SecurityContextHolder 안에 있는 principal(UserDetails 객체)로 사용하도록 변경하기.
-         * (1) UserAccount.java 생성.
+         * UserDetails 타입인
+         * Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+         * 를 본인 도메인이 제공하는(본인 도메인에서 사용자를 나타내는) 타입(Account)으로 사용하고 싶을 때.
+         * 커스텀한 User를 생성.
+         * (1) 스프링 시큐리티가 제공하는 User를 상속받는 UserAccount.java 생성.
          * (2) AccountService.java의 loadUserByUsername() 리턴 부분을
          *      return new UserAccount(account); 로 변경.
          * (3) 여기에서 '@AuthenticationPrincipal UserAccount userAccount'를 인자로 받을 수 있게 됨.
