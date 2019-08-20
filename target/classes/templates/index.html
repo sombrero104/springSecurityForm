@@ -25,5 +25,14 @@
     <div sec:authorize-expr="hasAnyRole('ROLE_ADMIN')">
         <a href="/admin" th:href="@{/admin}">Admin</a>
     </div>
+    <div sec:authorize-expr="isAnonymous()">
+        anonymous user
+    </div>
+    <div sec:authorize-expr="isRememberMe()">
+        remember me user
+    </div>
+    <div sec:authorize="isRememberMe()">
+        remember me user 123213
+    </div>
 </body>
 </html>
