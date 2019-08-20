@@ -1,11 +1,9 @@
 package sombrero.account;
 
-import com.sun.tools.javac.util.List;
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 
-import java.util.Collection;
+import java.util.List;
 
 /**
  * @AuthenticationPrincipal로 SecurityContextHolder 안에 있는 principal(UserDetails 객체) 가져오기.
