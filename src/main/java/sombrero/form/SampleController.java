@@ -51,6 +51,12 @@ public class SampleController {
     // 인증되지 않은 상태에서는 AnonymousAuthenticationToken을 사용하는데 이 안의 principal 값은 문자열인 'anonymousUser' 이다.
     // 인증 후 principal은 UserDetails 객체를 가진다.
     // 때문에 AnonymousAuthenticationToken 안의 principal 타입이 Object 타입으로 명시되어 있다.
+
+    // (익명 사용자로 접근할 경우
+    // 디폴트로 principal 값 "anonymousUser” 문자열을 가지고 있는
+    // AnonymousAuthenticationFilter를 타게 되는데
+    // 이때 이 principal 값으로 AnonymousAuthenticationToken을 생성함.)
+
     /**
      * (4) 위에서 붙인 긴 애노테이션 expression을 여러곳에서 사용할 경우 너무 길기 때문에 @CurrentUser라는 커스텀 애노테이션으로 만듬.
      *      '@AuthenticationPrincipal(expression = "#this == 'anonymousUser' ? null : account")'
