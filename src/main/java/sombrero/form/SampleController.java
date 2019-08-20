@@ -78,15 +78,12 @@ public class SampleController {
         /*if(userAccount == null) {
             model.addAttribute("message", "Hello Spring Security");
         } else {
-            //
-            // userAccount.getAccount().getUsername()
+            // userAccount.getAccount().getUsername() // Account를 꺼내서 사용하는 방법.
             model.addAttribute("message", "Hello, " + userAccount.getUsername());
         }*/
         if(account == null) {
             model.addAttribute("message", "Hello Spring Security");
         } else {
-            //
-            // userAccount.getAccount().getUsername()
             model.addAttribute("message", "Hello, " + account.getUsername());
         }
 
