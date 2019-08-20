@@ -564,6 +564,7 @@ https://www.baeldung.com/spring-security-method-security<br/>
      => 메소드 호출 이전에 권한을 확인한다. 스프링 EL을 사용하지 못한다.
 </pre>
 <br/>
+
 ### 3. @AuthenticationPrincipal<br/>
 웹 MVC 핸들러 아규먼트로 principal(자바가 아닌 UserDetails 객체) 객체를 받을 수 있다.<br/>
 <pre>
