@@ -28,11 +28,13 @@
     <div sec:authorize-expr="isAnonymous()">
         anonymous user
     </div>
+
+    <!-- RememberMe 사용자인지 확인. (둘 다 사용 가능. RememberMe 체크 후 세션을 삭제하면 나타남.)-->
     <div sec:authorize-expr="isRememberMe()">
         remember me user
     </div>
     <div sec:authorize="isRememberMe()">
-        remember me user 123213
+        remember me user 2
     </div>
 </body>
 </html>

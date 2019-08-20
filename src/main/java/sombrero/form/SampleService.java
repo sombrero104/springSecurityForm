@@ -1,6 +1,7 @@
 package sombrero.form;
 
 import org.springframework.scheduling.annotation.Async;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -32,6 +33,7 @@ public class SampleService {
      * 2. SecurityContext
      *  -> Authentication 제공.
      */
+    @Secured("ROLE_USER")
     public void dashboard() {
 
         /**

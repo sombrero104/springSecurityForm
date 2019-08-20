@@ -543,6 +543,7 @@ if(principal == null) {
 }
 </pre>
 2. 메소드 시큐리티
-
+웹이 아닌 데스크탑 어플리케이션에서 사용.
+데스크탑 어플리케이션이라고 생각하고 SampleService.java와 SampleServiceTest.java 파일 참조.
 
 <br/><br/>
