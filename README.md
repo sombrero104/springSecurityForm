@@ -616,7 +616,7 @@ List❮Book❯ findCurrentUserBooks();
 Book.java, BookRepository.java, DefaultDataGenerator.java, SampleController.java의 user(), user.html 참조.<br/>
 <pre>
 애플리케이션 구동 시 DefaultDataGenerator에서 Account 2명(Book 포함) 자동 생성.
-    -> 로그인 후 /user 페이지 접근 시 현재 로그인 중인 Account에 해당하는 Book의 책이름을 페이지에 출력.
+    -> 로그인 후 /user 페이지 접근 시 현재 인증된 Account에 해당하는 Book의 책이름을 페이지에 출력.
     -> BookRepository에서 @Query 애노테이션을 사용하여 SpEL로
         현재 인증된(로그인하여 접속중인) principal을 참조해서 사용자에 해당하는 Book을 가져옴.
 </pre>
