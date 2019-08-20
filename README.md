@@ -571,5 +571,6 @@ https://www.baeldung.com/spring-security-method-security<br/>
      return new UserAccount(account); 로 변경.
 (3) Controller에서 '@AuthenticationPrincipal UserAccount userAccount'를 인자로 받을 수 있게 됨.
 </pre>
+UserAccount.java 파일, AccountService.java 파일, SampleController.java 파일 참조.<br/>
 
 <br/><br/>
