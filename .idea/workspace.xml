@@ -2,10 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="194f3d26-a6f3-4b88-8487-1b1b962c39a6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/sombrero/account/UserAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sombrero/account/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sombrero/account/AccountService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sombrero/form/SampleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sombrero/form/SampleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sombrero/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sombrero/Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sombrero/account/AccessDeniedController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sombrero/account/AccessDeniedController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sombrero/account/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sombrero/account/Account.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sombrero/account/AccountContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sombrero/account/AccountContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sombrero/account/AccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sombrero/account/AccountController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sombrero/account/AccountRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sombrero/account/AccountRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sombrero/account/LogInOutController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sombrero/account/LogInOutController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sombrero/account/SignUpController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sombrero/account/SignUpController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sombrero/common/LoggingFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sombrero/common/LoggingFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sombrero/common/SecurityLogger.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sombrero/common/SecurityLogger.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sombrero/config/SecurityConfig$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sombrero/config/SecurityConfig$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sombrero/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sombrero/config/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sombrero/config/SecurityConfig2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sombrero/config/SecurityConfig2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sombrero/test/Child.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sombrero/test/Child.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sombrero/test/Parent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sombrero/test/Parent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/sombrero/account/AccountControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/sombrero/account/AccountControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/sombrero/account/SignUpControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/sombrero/account/SignUpControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/sombrero/account/WithUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/sombrero/account/WithUser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/sombrero/form/SampleServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/sombrero/form/SampleServiceTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -20,24 +37,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="563" column="43" lean-forward="true" selection-start-line="563" selection-start-column="43" selection-end-line="563" selection-end-column="43" />
+            <state relative-caret-position="8505">
+              <caret line="567" column="4" selection-start-line="567" selection-start-column="4" selection-end-line="567" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sombrero/account/UserAccount.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sombrero/account/UserAccount.java">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home/lib/src.zip!/java.base/java/util/List.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="18" selection-start-line="10" selection-end-line="16" selection-end-column="86" />
+            <state relative-caret-position="175">
+              <caret line="137" column="17" selection-start-line="137" selection-start-column="17" selection-end-line="137" selection-end-column="17" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#629#630#0" expanded="true" />
-                <element signature="e#659#660#0" expanded="true" />
+                <element signature="e#37270#37271#0" expanded="true" />
+                <element signature="e#37330#37331#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -46,8 +74,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/sombrero/form/SampleController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="51" column="64" selection-start-line="51" selection-start-column="64" selection-end-line="51" selection-end-column="64" />
+            <state relative-caret-position="435">
+              <caret line="45" column="16" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -118,8 +146,8 @@
         <option value="$PROJECT_DIR$/src/main/java/sombrero/config/MethodSecurity.java" />
         <option value="$PROJECT_DIR$/src/main/java/sombrero/account/AccountService.java" />
         <option value="$PROJECT_DIR$/src/main/java/sombrero/form/SampleController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/sombrero/account/UserAccount.java" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/main/java/sombrero/account/UserAccount.java" />
       </list>
     </option>
   </component>
@@ -153,7 +181,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="506" />
+    <option name="x" value="393" />
     <option name="y" value="23" />
     <option name="width" value="1287" />
     <option name="height" value="967" />
@@ -166,8 +194,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -304,6 +330,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -312,7 +340,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.28494042" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -442,8 +470,8 @@
     </configuration>
     <list>
       <item itemvalue="Application.Application" />
-      <item itemvalue="JUnit.AccountControllerTest" />
       <item itemvalue="Application.Child" />
+      <item itemvalue="JUnit.AccountControllerTest" />
       <item itemvalue="JUnit.SignUpControllerTest.signUpForm" />
       <item itemvalue="JUnit.SignUpControllerTest" />
       <item itemvalue="JUnit.SampleServiceTest.dashboard" />
@@ -504,22 +532,22 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="506" y="23" width="1287" height="967" extended-state="0" />
+    <frame x="393" y="23" width="1287" height="967" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22971888" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23293173" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32914287" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.36914286" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.36914286" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4502857" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.31542858" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.31542858" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32914287" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -686,23 +714,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.9.RELEASE/spring-web-5.1.9.RELEASE.jar!/org/springframework/web/filter/OncePerRequestFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/5.1.6.RELEASE/spring-security-web-5.1.6.RELEASE.jar!/org/springframework/security/web/csrf/LazyCsrfTokenRepository.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-          <folding>
-            <element signature="e#1144#1145#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/9.0.22/tomcat-embed-core-9.0.22.jar!/javax/servlet/ServletRequest.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="554">
@@ -846,13 +857,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="54" selection-start-line="7" selection-start-column="54" selection-end-line="7" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="34" column="69" selection-start-line="34" selection-start-column="69" selection-end-line="34" selection-end-column="69" />
         </state>
       </provider>
     </entry>
@@ -1044,29 +1048,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sombrero/form/SampleController.java">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="51" column="64" selection-start-line="51" selection-start-column="64" selection-end-line="51" selection-end-column="64" />
+        <state relative-caret-position="8505">
+          <caret line="567" column="4" selection-start-line="567" selection-start-column="4" selection-end-line="567" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sombrero/account/UserAccount.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/sombrero/form/SampleController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="18" selection-start-line="10" selection-end-line="16" selection-end-column="86" />
+        <state relative-caret-position="435">
+          <caret line="45" column="16" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home/lib/src.zip!/java.base/java/util/List.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="137" column="17" selection-start-line="137" selection-start-column="17" selection-end-line="137" selection-end-column="17" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#629#630#0" expanded="true" />
-            <element signature="e#659#660#0" expanded="true" />
+            <element signature="e#37270#37271#0" expanded="true" />
+            <element signature="e#37330#37331#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="563" column="43" lean-forward="true" selection-start-line="563" selection-start-column="43" selection-end-line="563" selection-end-column="43" />
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/springSecurityForm.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sombrero/account/UserAccount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1127,7 +1150,6 @@
             <option name="proportions">
               <list>
                 <option value="0.28494042" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
