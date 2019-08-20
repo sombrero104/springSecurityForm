@@ -48,6 +48,9 @@ public class SampleController {
      */
     // public String index(Model model, @AuthenticationPrincipal(expression = "#this == 'anonymousUser' ? null : account") Account account) {
     // 현재 객체가 익명사용자(anonymousUser)가 아닌 경우에는 principal 안에 들어있는 account를 가져오겠다는 뜻.
+    // 인증되지 않은 상태에서는 AnonymousAuthenticationToken을 사용하는데 이 안의 principal 값은 문자열인 'anonymousUser' 이다.
+    // 인증 후 principal은 UserDetails 객체를 가진다.
+    // 때문에 AnonymousAuthenticationToken 안의 principal 타입이 Object 타입으로 명시되어 있다.
     /**
      * (4) 위에서 붙인 긴 애노테이션 expression을 여러곳에서 사용할 경우 너무 길기 때문에 @CurrentUser라는 커스텀 애노테이션으로 만듬.
      *      '@AuthenticationPrincipal(expression = "#this == 'anonymousUser' ? null : account")'
