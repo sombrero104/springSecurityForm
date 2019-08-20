@@ -574,7 +574,8 @@ https://www.baeldung.com/spring-security-method-security<br/>
 (1) UserAccount.java 생성.
 (2) AccountService.java의 loadUserByUsername() 리턴 부분을
      return new UserAccount(account); 로 변경.
-(3) Controller에서 '@AuthenticationPrincipal UserAccount userAccount'를 인자로 받을 수 있게 됨.
+(3) SampleController에서 '@AuthenticationPrincipal UserAccount userAccount'를 인자로 받을 수 있게 됨.
+    => expression을 사용해서 Account를 가져오는 방법도 있음. SampleController.java 파일 참조.
 </pre>
 UserAccount.java 파일, AccountService.java 파일, SampleController.java 파일 참조.<br/>
 
