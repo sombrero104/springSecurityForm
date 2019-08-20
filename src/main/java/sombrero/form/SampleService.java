@@ -11,6 +11,7 @@ import sombrero.account.Account;
 import sombrero.account.AccountContext;
 import sombrero.common.SecurityLogger;
 
+import javax.annotation.security.RolesAllowed;
 import java.util.Collection;
 
 @Service
@@ -33,7 +34,8 @@ public class SampleService {
      * 2. SecurityContext
      *  -> Authentication 제공.
      */
-    @Secured("ROLE_USER")
+    // @Secured("ROLE_USER")
+    @RolesAllowed("ROLE_USER")
     public void dashboard() {
 
         /**
