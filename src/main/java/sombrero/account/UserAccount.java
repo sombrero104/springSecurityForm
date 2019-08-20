@@ -15,7 +15,7 @@ import java.util.List;
  * (2) AccountService.java의 loadUserByUsername() 리턴 부분을
  *      return new UserAccount(account); 로 변경.
  * (3) SampleController에서 '@AuthenticationPrincipal UserAccount userAccount'를 인자로 받을 수 있게 됨.
- *     (SecurityContextHolder 안에 있는 principal(UserDetails 객체) 가져옴.)
+ *     (SecurityContextHolder 안에 있는 principal(UserDetails를 상속한 User를 상속한 UserAccount 객체) 가져옴.)
  */
 public class UserAccount extends User {
 
