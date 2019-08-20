@@ -21,9 +21,9 @@ public class UserAccount extends User {
     public UserAccount(Account account) {
         super(account.getUsername(), account.getPassword()
                 , List.of(new SimpleGrantedAuthority("ROLE_" + account.getRole())));
-                // List.of()를 사용하기 위해선 Language Level의 자바 버전 9를 사용해야 함.
-                // (강의에서는 버전 11을 사용하였는데 11로 했더니 9를 사용하라며 컴파일 에러가 뜸.
-                //  한번 변경한 후로는 11로 변경해줘도 자동으로 9로 바뀜;;)
+                // List.of()는 자바 버전 9 이상에서만 지원. (현재는 11 사용중.)
+                // Module Settings > Modules > Language Level 변경.
+                // pom.xml에서 configuration, properties에 버전 변경.
         this.account = account;
     }
 
