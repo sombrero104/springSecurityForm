@@ -542,5 +542,7 @@ if(principal == null) {
     model.addAttribute("message", "Hello, " + principal.getName());
 }
 </pre>
+2. 메소드 시큐리티
+
 
 <br/><br/>
