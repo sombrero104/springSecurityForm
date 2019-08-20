@@ -586,7 +586,7 @@ Account에 접근할 수 있도록 커스텀한 User를 생성. (UserDeails 타�
     => expression을 사용해서 Account를 가져오는 방법도 있음. SampleController.java 파일 참조.
 </pre>
 UserAccount.java 파일, AccountService.java 파일, SampleController.java 파일 참조.<br/>
-<br/>
+<br/><br/>
 
 ### 4. 스프링 데이터 연동<br/>
 @Query 애노테이션에서 SpEL로 principal 참조할 수 있는 기능 제공.<br/>
