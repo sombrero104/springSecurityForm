@@ -111,9 +111,15 @@ AbstractAuthenticationProcessingFilter의 doFilter()가 실행<br/>
 14. ExeptionTranslationFilter
 15. FilterSecurityInterceptor<br/><br/>
 
-이 모든 필터들은 FilterChainProxy가 호출.
-또 FilterChainProxy는 DelegatingFilterProxy에 의해서 호출.
-WebSecurityConfigurerAdapter를 상속하여 커스텀한 SecurityConfig가 사용할 필터 체인 목록을 만드는 역할을 함.<br/><br/>
+이 모든 필터들은 FilterChainProxy가 호출. <br/>
+또 FilterChainProxy는 DelegatingFilterProxy에 의해서 호출. <br/>
+WebSecurityConfigurerAdapter를 상속하여 커스텀한 SecurityConfig가 사용할 필터 체인 목록을 만드는 역할을 함.<br/>
+
+<img src="./images/filter_chain_01.png" width="45%" /><br/> 
+<img src="./images/filter_chain_02.png" width="80%" /><br/> 
+<img src="./images/filter_chain_03.png" width="100%" /><br/> 
+
+FilterChainProxy에서 필터 체인들을 리스트로 가지고 있는 것을 확인할 수 있다. <br/><br/>
 
 #### 1. WebAsyncManagerIntegrationFilter
 스프링 MVC의 Async 기능(핸들러에서 Callable을 리턴할 수 있는 기능)을 사용할 때에도 SecurityContext를 공유하도록 도와주는 필터.<br/>
